@@ -11,11 +11,13 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Rubik+Mono+One&family=Krona+One&display=swap" rel="stylesheet"><!-- Header Font-->
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Rubik+Mono+One&family=Krona+One&:wght@500&display=swap" rel="stylesheet"><!-- Header Font-->
+
+        <script src="https://unpkg.com/scrollreveal"></script><!--Reveal Script-->
         <title>Efraim's Profile Page</title>
 
 </head>
-<nav class="navbar navbar-expand-lg navbar-dark navbar-fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark navbar-fixed-top navbar-overlay">
     <div class="container">
       <a class="navbar-brand" href="#" style="font-family: Krona One;">Efraim</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,10 +26,10 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#about">About</a>
+            <a class="nav-link" href="#About">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Places I've Been</a>
+            <a class="nav-link" href="#Places">Places</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Projects</a>
@@ -48,18 +50,18 @@
     <div class="container h-100">
       <div class="d-flex h-100 text-center align-items-center">
         <div class="w-100 text-white">
-          <h1 class="display-3" style="font-family: 'Rubik Mono One', sans-serif;">Efraim Grebnev</h1>
-          <p class="lead mb-0" style="font-family: 'Noto Sans', sans-serif;">United States Navy Gas Turbines Technician</p>
+          <h1 class="display-3" style="font-family: 'Rubik Mono One', sans-serif;" id="NameTag">Efraim Grebnev</h1>
+          <p class="lead mb-0" style="font-family: 'Noto Sans', sans-serif;" id="DescTag">United States Navy Gas Turbines Technician</p>
         </div>
       </div>
     </div>
 </header>
-  <section class="my-5">
+  <section id="Intro">
     <div class="container">
       <div class="row">
         <div class="col-md-8 mx-auto">
           <p>This website serves as an introduction to my work and myself. I am as of the moment active duty military serving the United States Navy. This landing page serves as a showcase of
-            what I do, what I've done, and what my future goals are. This website was entirely designed by me, and was build from scratch from <a href="https://getbootstrap.com"><code>Bootstrap</code></a>.
+            what I do, what I've done, and what my future goals are. This website was entirely designed by me, and was build from scratch from <a href="https://getbootstrap.com"><code>Bootstrap</code></a>
           </p>
           <p>
             I'm an avid learner and will continue to do so as we go through this journey of life.
@@ -70,18 +72,18 @@
   </section>
 
 
-  <section id="about">
+  <section id="About">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto" style="padding-bottom:50px;">
-          <h2 class="centered">About Me</h2>
+          <h2 class="titleText">About Me</h2>
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-4"> 
-          <img src="resources/profilepic.jpg"  alt="me" style="border-radius:1rem; box-shadow: black;">
+        <div class="col-lg-4 content-left"> 
+          <img src="resources/profilepic.jpg"  alt="me">
         </div>
-        <div class="col-lg-8">
+        <div class="col-lg-8 content-right">
           <h4>I live life the way I want to</h4>
           <p>Currently I live in the nice little town of Great Lakes Illinois where I'm currently undergoing training to become a Naval Gas Turbines Technician</p>
           <p>I have 2 loving brothers and a father who I love very much</p>
@@ -94,7 +96,13 @@
     </div>
   </section>
 
+  <section id="Places">
+    
+  </section>
 
 
+
+  <script src="js/animations.js"></script>
+  
   
 </html>

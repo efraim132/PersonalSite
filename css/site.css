@@ -6,6 +6,10 @@ body{
   background-image: linear-gradient(#08081a, #020e1bbd 70%);
 }
 
+p{
+  font-family: Roboto, sans-serif;
+}
+
 
 header {
     position: relative;
@@ -56,15 +60,29 @@ header {
   }
 
   .navbar-overlay {
-    margin-bottom: -104px; 
-    z-index: 1; 
+    margin-bottom: -14px; 
 }
 
+#About {
+  margin-bottom: 20px;
+}
 
+#About h2{
+  font-family: Poppins, sans-serif;
+}
   
+#About h4{
+  font-weight: bold;
+}
+
+#About img{
+  border-radius:1rem;
+  box-shadow: black;
+}
+
   @media (pointer: coarse) and (hover: none) {
     header {
-      background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
+      background: url('https://unsplash.com/photos/8mkQRqv1A4E/download?force=true&w=1920') black no-repeat center center scroll;
     }
     header video {
       display: none;
