@@ -13,6 +13,8 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Rubik+Mono+One&family=Krona+One&:wght@500&display=swap" rel="stylesheet"><!-- Header Font-->
 
+        <script src="https://kit.fontawesome.com/e05eb8495f.js" crossorigin="anonymous"></script> <!--Fontawesomekit-->
+
         <script src="https://unpkg.com/scrollreveal"></script><!--Reveal Script-->
         <title>Efraim's Profile Page</title>
 
@@ -35,7 +37,7 @@
             <a class="nav-link" href="#Projects">Projects</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link" href="#Contact">Contact</a>
           </li>
         </ul>
       </div>
@@ -98,13 +100,13 @@
     <div class="container">
       <div class="row">
         <div class="col-2 mx-auto img-left">
-          <div class="card border-dark text-white bg-dark">
+          <div class="card text-white">
             <img class="card-img-top" src="resources/Israel.jpg" alt="Card Image">
               <p class="card-header">Israel</p>
           </div>
         </div>
         <div class="col-2 mx-auto img-right">
-          <div class="card border-dark text-white bg-dark">
+          <div class="card text-white">
             <img class="card-img-top" src="resources/Baker.jpg" alt="Card Image">
               <p class="card-header">Mountains</p>
           </div>
@@ -154,23 +156,46 @@
             <td><a href="https://github.com/efraim132/EasyNetworking"><code>Socket Library</code></a></td>
           </tr>
           <tr>
+            <th scope="row">Web</th>
+            <td>Personal Website</td>
+            <td>4/18/2020</td>
+            <td><a href="https://github.com/efraim132/PersonalSite"><code>Website</code></a></td>
+          </tr>
+          <tr>
             <th scope="row">Minecraft</th>
             <td>8-bit Minecraft CPU</td>
             <td>4/28/2018</td>
             <td><code>TODO LINK</code></td>
           </tr>
+          
         </tbody>
       </table>
     </div>
   </section>
 
 
+  <section id="Contact">
+    <div class="container">
+      <div class="col-lg-8 mx-auto" style="padding-bottom:20px; padding-top:75px;">
+        <h3 class="titleText text-center">Contact me</h3>
+      </div>
+      <div class="row center-padding">
+        <div class="col-md-6 form-line contact-div">
+          <p class="text-right"><i class="fab fa-github"></i> <a class="titleText" href="https://github.com/efraim132">Github</a></p>
+          <p class="text-right"><i class="fas fa-envelope"></i> <a class="titleText" href="mailto:efraimgrebnevp@gmail.com">Email</a></p>
+        </div>
+        <div class="col-md-6 contact-div">
+          <p class="text-left"><i class="fab fa-youtube"></i> <a class="titleText" href="https://www.youtube.com/user/Efraim132">Youtube</a></p>
+          <p class="text-left"><i class="fab fa-linkedin"></i> <a class="titleText" href="https://www.linkedin.com/in/efraim-grebnev-a74471161/">LinkedIn</a> </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-
-
-
-
+  <footer id="sticky-footer" class="py-4 text-white-50">
+    <div class="container text-center">
+      <small>Copyright &copy; Efraim Grebnev</small>
+    </div>
+  </footer>
   <script src="js/animations.js"></script>
-  
-  
 </html>

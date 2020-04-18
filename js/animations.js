@@ -63,6 +63,13 @@ window.sr = ScrollReveal();
       viewFactor: 0.2
     });
 
+    sr.reveal(".contact-div", {
+      duration: 500,
+      origin:'bottom',
+      distance:'100px',
+      viewFactor: 0.2
+    });
+
 
 
     
