@@ -20,24 +20,41 @@ window.sr = ScrollReveal();
       origin:'bottom',
       distance:'30px',
       viewFactor: 0.2
-    })
+    });
 
     sr.reveal('.titleText', {
       duration: 1000,
       origin:'left',
       distance:'30px',
       viewFactor: 0.2
-    })
+    });
 
     sr.reveal('.content-left', {
       duration: 500,
       origin:'left',
       distance:'300px',
       viewFactor: 0.2
-    })
+    });
     sr.reveal('.content-right', {
       duration: 500,
       origin:'right',
       distance:'300px',
       viewFactor: 0.2
-    })
+    });
+
+    sr.reveal('#Places .img-left', {
+      duration: 500,
+      origin:'bottom',
+      distance:'300px',
+      viewFactor: 0.2
+    });
+    sr.reveal('#Places .img-right', {
+      duration: 500,
+      delay:300,
+      origin:'bottom',
+      distance:'300px',
+      viewFactor: 0.2
+    });
+
+    
+    
