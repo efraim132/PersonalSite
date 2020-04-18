@@ -44,17 +44,26 @@ window.sr = ScrollReveal();
 
     sr.reveal('#Places .img-left', {
       duration: 500,
-      origin:'bottom',
-      distance:'300px',
+      origin:'left',
+      distance:'100px',
       viewFactor: 0.2
     });
     sr.reveal('#Places .img-right', {
       duration: 500,
-      delay:300,
-      origin:'bottom',
-      distance:'300px',
+      delay:100,
+      origin:'left',
+      distance:'100px',
       viewFactor: 0.2
     });
+
+    sr.reveal('#Projects tr', {
+      duration: 500,
+      origin:'bottom',
+      distance:'100px',
+      viewFactor: 0.2
+    });
+
+
 
     
     

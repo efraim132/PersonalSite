@@ -81,8 +81,9 @@ div {
 }
 
 
-#Places section{
-  margin-bottom: 20px;
+#Places{
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 #Places .card{
@@ -114,6 +115,21 @@ div {
   padding-left: 8rem;
   line-height: 20px;
 }
+
+#Projects .titleText{
+  font-size: 5rem;
+}
+
+#Projects table{
+  padding-top:0.5rem;
+}
+
+#Projects thead th{
+  font-size:1.5rem;
+  font-weight:bold;
+}
+
+
 
   @media (pointer: coarse) and (hover: none) {
     header {
