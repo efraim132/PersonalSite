@@ -3,7 +3,8 @@ html {
   scrollbar-width: none;
 }
 body{
-  background-image: linear-gradient(#08081a, #061627 70%, #061b27);
+  /*background-image: linear-gradient(#08081a, #061627 70%, #061b27);*/
+  background-image: linear-gradient(0deg, rgba(75,108,183,1) 0%, rgba(24,40,72,1) 50%);
 }
 
 p{
