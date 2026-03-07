@@ -19,14 +19,15 @@ export default function About() {
 
           <ScrollReveal direction="right" delay={100}>
             <div className={styles.bio}>
-              <h3 className={styles.subheading}>Faith, Family, Fun</h3>
+              <h3 className={styles.subheading}>Taking my own path</h3>
               <p>
-                Currently I live in Redmond WA, I have come back to my home of Washington
-                following my military service in preparation to my next chapter.
+                Currently I live in Berlin Germany, after coming home to Washington,
+                I decided to continue my education following my military service in preparation to my next chapter.
               </p>
               <p>
                 I develop applications for fun and to build my portfolio. I keep mine genuine
-                and full of the edits and revisions to see how much I've come.
+                and full of the edits and revisions to see how much I've come. If there's any feedback feel free to reach out.
+                I'm always open to new ideas even for entirely new projects!
               </p>
             </div>
           </ScrollReveal>
@@ -47,12 +48,11 @@ export default function About() {
                 aboard the USS America, maintaining a SECRET clearance to fulfill my responsibilities.
                 I directed a team of 13 personnel in maintaining propulsion systems, achieving a
                 100% readiness rating during a congressional inspection after organizing over 600
-                hours of technical training. As a project manager, I led 168 personnel across
+                hours of technical training. As a project manager, I led personnel across
                 multi-disciplinary teams, ensuring all maintenance projects were completed on
                 schedule with zero deployment delays. In my role as Engineering Officer of the
                 Watch (EOOW), I oversaw safe operations of propulsion and auxiliary systems while
-                managing 11 operators. I also successfully monitored the distribution of 6,000,000
-                gallons of fuel onboard, further enhancing our mission readiness.
+                managing 11 operators.
               </p>
             </div>
           </div>

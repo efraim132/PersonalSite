@@ -31,7 +31,7 @@ export const projects: Project[] = [
     date: '09/28/2025',
     sortDate: '2025-09-28',
     url: 'https://efraim132.github.io/SuperLua/index.html',
-    description: 'A transpiler that compiles a superset of Lua with modern language features down to standard Lua.',
+    description: 'A transpiler that compiles Lua with classes, into normal Lua.',
     featured: true,
     detailRoute: '/projects/superlua',
     tags: ['Python', 'Lua', 'Compiler Design'],
