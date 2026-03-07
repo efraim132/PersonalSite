@@ -55,7 +55,7 @@ export default function Navbar() {
             </li>
           ))}
           <li>
-            <a href="/Resume.docx" className={styles.link} download>
+            <a href="/Resume.pdf" className={styles.link} download>
               Resume
             </a>
           </li>
