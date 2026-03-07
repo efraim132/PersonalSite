@@ -19,7 +19,7 @@ export const projects: Project[] = [
     date: '10/28/2025',
     sortDate: '2025-10-28',
     url: 'https://github.com/GrebCo/CC-Tweaked-Amazon-OS',
-    description: 'A networking and operating system framework for ComputerCraft Tweaked in Minecraft.',
+    description: 'A networking and browser system framework for ComputerCraft Tweaked in Minecraft.',
     featured: true,
     detailRoute: '/projects/eenet',
     tags: ['Lua', 'ComputerCraft', 'Networking'],
