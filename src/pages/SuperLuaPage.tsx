@@ -45,7 +45,7 @@ export default function SuperLuaPage() {
           'local v1 = Vector:new(3, 4)\n' +
           'local v2 = Vector:new(1, 2)\n' +
           'local v3 = v1:add(v2)\n' +
-          'print(v3:toString())'} language={"python"} title={"SuperLua.py"}/>
+          'print(v3:toString())'} language={"SuperLua"} title={"SuperLua.slua"}/>
 
       <h2>Technical Approach</h2>
       <p>
