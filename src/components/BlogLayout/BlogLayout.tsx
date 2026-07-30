@@ -9,6 +9,7 @@ interface BlogLayoutProps {
   projectUrl?: string
   intro?: string
   disclosure?: string
+  readingTime?: string
   children: React.ReactNode
 }
 
@@ -19,6 +20,7 @@ export default function BlogLayout({
   projectUrl,
   intro,
   disclosure,
+  readingTime,
   children,
 }: BlogLayoutProps) {
   useEffect(() => {
@@ -43,6 +45,9 @@ export default function BlogLayout({
           {intro != null && <p className={styles.intro}>{intro}</p>}
           <div className={styles.meta}>
             <span className={styles.date}>{date}</span>
+            {readingTime != null && (
+              <span className={styles.readingTime}>{readingTime}</span>
+            )}
             <div className={styles.tags}>
               {tags.map((tag) => (
                 <span key={tag} className={styles.tag}>{tag}</span>

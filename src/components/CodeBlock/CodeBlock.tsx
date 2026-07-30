@@ -1,15 +1,19 @@
 import { useEffect, useRef } from 'react'
 import hljs from 'highlight.js/lib/core'
+import json from 'highlight.js/lib/languages/json'
 import lua from 'highlight.js/lib/languages/lua'
 import plaintext from 'highlight.js/lib/languages/plaintext'
 import python from 'highlight.js/lib/languages/python'
+import sql from 'highlight.js/lib/languages/sql'
 import typescript from 'highlight.js/lib/languages/typescript'
 import './hljs-theme.css'
 import styles from './CodeBlock.module.css'
 
+hljs.registerLanguage('json', json)
 hljs.registerLanguage('lua', lua)
 hljs.registerLanguage('plaintext', plaintext)
 hljs.registerLanguage('python', python)
+hljs.registerLanguage('sql', sql)
 hljs.registerLanguage('typescript', typescript)
 
 interface CodeBlockProps {
@@ -26,14 +30,6 @@ export default function CodeBlock({
   showLineNumbers = false,
 }: CodeBlockProps) {
   const codeRef = useRef<HTMLElement>(null)
-
-  useEffect(() => {
-    if (codeRef.current) {
-      codeRef.current.removeAttribute('data-highlighted')
-      hljs.highlightElement(codeRef.current)
-    }
-  }, [codeString, language])
-
   const trimmed = codeString.trim()
   const lines = trimmed.split('\n')
   const normalizedLanguage = language.toLowerCase()
@@ -46,6 +42,14 @@ export default function CodeBlock({
   if (normalizedLanguage === 'minimark') {
     highlightLanguage = 'plaintext'
   }
+
+  useEffect(() => {
+    if (codeRef.current != null) {
+      codeRef.current.textContent = trimmed
+      codeRef.current.removeAttribute('data-highlighted')
+      hljs.highlightElement(codeRef.current)
+    }
+  }, [highlightLanguage, trimmed])
 
   return (
     <div className={styles.wrapper}>
