@@ -10,21 +10,11 @@
   line-height: 0.95;
 }
 
-.intro {
-  max-width: 600px;
-  margin-top: 1.75rem;
-  color: var(--color-text-secondary);
-  font-size: 1.05rem;
-  line-height: 1.7;
-}
-
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0;
+  gap: 0.75rem;
   margin-top: 4rem;
-  border-top: 1px solid var(--color-border-strong);
-  border-bottom: 1px solid var(--color-border-strong);
 }
 
 .card {
@@ -34,14 +24,12 @@
   gap: 1rem;
   min-height: 96px;
   padding: 1.25rem;
-  border-right: 1px solid var(--color-border);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-control);
+  background: rgba(22, 22, 40, 0.35);
   color: var(--color-text-secondary) !important;
   text-decoration: none;
   transition: background-color var(--transition-normal), color var(--transition-normal);
-}
-
-.grid > div:last-child .card {
-  border-right: 0;
 }
 
 .card:hover {
@@ -69,10 +57,6 @@
   }
 
   .card {
-    border-bottom: 1px solid var(--color-border);
-  }
-
-  .grid > div:nth-child(2n) .card {
-    border-right: 0;
+    min-height: 84px;
   }
 }

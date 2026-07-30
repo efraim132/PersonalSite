@@ -46,12 +46,7 @@ export default function Contact() {
     <section id="contact" className={styles.section}>
       <div className="container">
         <ScrollReveal>
-          <p className="eyebrow">Contact</p>
-          <h2 className={styles.heading}>Let’s make the complicated part clear.</h2>
-          <p className={styles.intro}>
-            I’m always interested in developer tools, operationally demanding
-            products, and unusual systems problems.
-          </p>
+          <h2 className={styles.heading}>Contact me</h2>
         </ScrollReveal>
 
         <div className={styles.grid}>

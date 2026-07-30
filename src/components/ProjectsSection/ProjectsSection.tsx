@@ -14,12 +14,12 @@ export default function ProjectsSection() {
         <ScrollReveal>
           <div className={styles.headingRow}>
             <div>
-              <p className="eyebrow">Selected work</p>
-              <h2 className={styles.heading}>Systems with a job to do.</h2>
+              <p className="eyebrow">Projects</p>
+              <h2 className={styles.heading}>Things I’ve made and worked on.</h2>
             </div>
             <p className={styles.intro}>
-              Product engineering across cloud platforms, real-time services,
-              developer tools, desktop software, and embedded prototypes.
+              Some are long-running tools, some are experiments, and a few are
+              private projects I can only describe in broad strokes.
             </p>
           </div>
         </ScrollReveal>
@@ -35,7 +35,7 @@ export default function ProjectsSection() {
         <ScrollReveal>
           <div className={styles.archiveHeading}>
             <h3 className={styles.allHeading}>Project archive</h3>
-            <span>{all.length} builds and experiments</span>
+            <span>{all.length} projects, experiments, and old builds</span>
           </div>
           <ProjectTable projects={all} />
         </ScrollReveal>

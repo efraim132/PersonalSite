@@ -8,7 +8,7 @@ export default function Footer() {
           <p className={styles.text}>
             &copy; {new Date().getFullYear()} Efraim Grebnev
           </p>
-          <p className={styles.note}>Built in public. Private details stay private.</p>
+          <p className={styles.note}>A personal collection of projects and notes.</p>
         </div>
       </div>
     </footer>

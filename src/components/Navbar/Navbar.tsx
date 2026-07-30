@@ -3,8 +3,8 @@ import { useLocation, Link } from 'react-router'
 import styles from './Navbar.module.css'
 
 const navLinks = [
-  { label: 'Work', hash: '#projects' },
-  { label: 'Writing', hash: '#writing' },
+  { label: 'Projects', hash: '#projects' },
+  { label: 'Stories', hash: '#writing' },
   { label: 'About', hash: '#about' },
   { label: 'Contact', hash: '#contact' },
 ]

@@ -34,15 +34,15 @@ export default function BlogLayout({
     <article className={styles.article}>
       <div className={styles.container}>
         <Link to="/#writing" className={styles.back}>
-          ← Back to field notes
+          ← Back to stories
         </Link>
 
         <header className={styles.header}>
-          <p className="eyebrow">Project retrospective</p>
+          <p className="eyebrow">Project story</p>
           <h1 className={styles.title}>{title}</h1>
           {intro != null && <p className={styles.intro}>{intro}</p>}
           <div className={styles.meta}>
-            <span className={styles.date}>Project window · {date}</span>
+            <span className={styles.date}>{date}</span>
             <div className={styles.tags}>
               {tags.map((tag) => (
                 <span key={tag} className={styles.tag}>{tag}</span>
@@ -51,7 +51,7 @@ export default function BlogLayout({
           </div>
           {projectUrl != null && (
             <a href={projectUrl} target="_blank" rel="noopener noreferrer" className={styles.projectLink}>
-              View Project &rarr;
+              Open project &rarr;
             </a>
           )}
         </header>

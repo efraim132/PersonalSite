@@ -11,31 +11,49 @@ export interface JournalEntry {
 export const journalEntries: JournalEntry[] = [
   {
     slug: '/writing/grebkey',
-    title: 'From license checks to a developer platform',
+    title: 'How GrebKey grew beyond license checks',
     summary:
-      'How an API, dashboard, billing flow, documentation, and two SDKs became one coherent product.',
+      'How I kept cached license checks current, repaired billing mismatches, and fixed incomplete API authentication docs.',
     window: 'Spring–Summer 2026',
-    type: 'Build log',
+    type: 'Project notes',
     tags: ['Platform', 'APIs', 'SDKs'],
   },
   {
     slug: '/writing/realtime-operations',
-    title: 'Making a real-time service operable',
+    title: 'Keeping live transcription running during server failures',
     summary:
-      'The feature work behind capacity controls, health signals, recovery paths, and useful operator tooling.',
+      'How I tested the real transcription path, prevented duplicate fallback servers, and drained live requests before cleanup.',
     window: 'Summer 2026',
-    type: 'Private case study',
-    tags: ['Operations', 'Reliability', 'Product'],
+    type: 'Private project notes',
+    tags: ['Operations', 'Reliability', 'Transcription'],
     privateCaseStudy: true,
   },
   {
     slug: '/writing/private-event-media',
-    title: 'A private event-media workflow that stayed simple',
+    title: 'Building a wedding image sharing service',
     summary:
-      'Guest uploads, mobile curation, progressive galleries, and careful sharing without exposing the event.',
+      'How I made large phone photos load quickly, enforced a shared storage limit, and kept original files private.',
     window: 'Summer 2026',
-    type: 'Private case study',
+    type: 'Private project notes',
     tags: ['Cloud', 'Media', 'Privacy'],
     privateCaseStudy: true,
+  },
+  {
+    slug: '/projects/eenet',
+    title: 'Building a tiny internet inside Minecraft',
+    summary:
+      'A browser, DNS, markup language, UI framework, and scripting sandbox for ComputerCraft.',
+    window: 'October 2025',
+    type: 'Project story',
+    tags: ['Lua', 'ComputerCraft', 'Networking'],
+  },
+  {
+    slug: '/projects/superlua',
+    title: 'Teaching Lua a few new tricks',
+    summary:
+      'Why I tried writing a small transpiler, what broke, and why the parser stopped being a regular expression.',
+    window: 'September 2025',
+    type: 'Project story',
+    tags: ['Python', 'Lua', 'Compilers'],
   },
 ]

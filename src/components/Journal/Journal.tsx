@@ -10,12 +10,12 @@ export default function Journal() {
         <ScrollReveal>
           <div className={styles.headingRow}>
             <div>
-              <p className="eyebrow">Field notes</p>
-              <h2 className="section-title">The work behind the work.</h2>
+              <p className="eyebrow">Stories</p>
+              <h2 className="section-title">Notes from building things.</h2>
             </div>
             <p className={styles.intro}>
-              Retrospectives on systems, tradeoffs, and what it took to make the
-              software useful.
+              Longer write-ups about what I tried, what got difficult, and what
+              I would remember for the next project.
             </p>
           </div>
         </ScrollReveal>

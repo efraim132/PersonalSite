@@ -42,6 +42,7 @@
   object-fit: cover;
   filter: saturate(0.75) contrast(1.05);
   border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-feature);
 }
 
 .bio {
@@ -76,6 +77,7 @@
   padding: 0.45rem 0.65rem;
   color: var(--color-signal);
   border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-small);
   font-family: var(--font-mono);
   font-size: 0.68rem;
   text-transform: uppercase;
@@ -83,8 +85,9 @@
 
 .navy {
   padding: clamp(1.75rem, 5vw, 3.5rem);
-  border-top: 1px solid var(--color-border-strong);
-  border-bottom: 1px solid var(--color-border-strong);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-feature);
+  background: rgba(22, 22, 40, 0.4);
 }
 
 .navyContent {
@@ -127,6 +130,6 @@
   }
 
   .navy {
-    padding: 1.5rem 0;
+    padding: 1.5rem;
   }
 }

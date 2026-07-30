@@ -17,6 +17,10 @@
   --section-padding: clamp(5.5rem, 10vw, 9rem) 0;
   --container-max: 1240px;
   --container-padding: 0 clamp(1.25rem, 4vw, 3rem);
+  --radius-small: 8px;
+  --radius-control: 12px;
+  --radius-card: 20px;
+  --radius-feature: 26px;
   --transition-fast: 150ms ease;
   --transition-normal: 300ms ease;
 }

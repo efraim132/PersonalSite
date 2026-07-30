@@ -1,5 +1,5 @@
 .wrapper {
-  border-radius: 8px;
+  border-radius: var(--radius-control);
   border: 1px solid var(--color-border);
   overflow: hidden;
   margin-bottom: 1.5rem;

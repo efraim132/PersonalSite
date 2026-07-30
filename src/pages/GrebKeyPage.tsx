@@ -3,79 +3,61 @@ import BlogLayout from '../components/BlogLayout/BlogLayout'
 export default function GrebKeyPage() {
   return (
     <BlogLayout
-      title="From license checks to a developer platform"
+      title="How GrebKey grew beyond license checks"
       date="Spring–Summer 2026"
       tags={['Cloudflare', 'TypeScript', 'Python', 'Developer experience']}
       projectUrl="https://grebkey.efraim.us"
-      intro="GrebKey started with a narrow promise: make software licensing less painful for a small developer. Fulfilling that promise meant building much more than a validation endpoint."
+      intro="GrebKey started with one job: tell an application whether a license key is valid. The interesting work began when caching, billing, documentation, and client libraries all had to agree with that answer."
     >
-      <h2>The product is the whole path</h2>
+      <h2>A changed key could leave an old answer in the cache</h2>
       <p>
-        A license service only works when every part of the path agrees. A developer
-        has to create a product, issue a key, integrate a client, understand failures,
-        manage activations, and know what happens when the network is unavailable.
-        The API can be correct while that overall experience is still confusing.
+        Validation results are cached so repeated checks do not hit the database
+        every time. That creates a concrete failure: if a key is suspended, revoked,
+        or moved to a different machine, the cached result can keep saying the old
+        thing until it expires.
       </p>
       <p>
-        I worked across that entire path: the Cloudflare-based API, the React
-        dashboard, GitHub sign-in, subscription state, generated API documentation,
-        onboarding guides, and SDKs for Node and Python.
-      </p>
-
-      <h2>Designing one contract across four surfaces</h2>
-      <p>
-        The biggest challenge was not any single screen or route. It was keeping the
-        same domain model coherent across the backend, dashboard, documentation, and
-        client libraries. Activation counts, expiry, product matching, and billing
-        state needed to mean the same thing everywhere.
-      </p>
-      <ul>
-        <li>
-          The API owns validation, activation, account boundaries, usage tracking,
-          and billing reconciliation.
-        </li>
-        <li>
-          The dashboard makes products, keys, account state, and next actions visible
-          without exposing internal implementation details.
-        </li>
-        <li>
-          Generated OpenAPI documentation stays tied to the code instead of drifting
-          into a second, hand-maintained truth.
-        </li>
-        <li>
-          Node and Python SDKs turn the remote contract into small, typed integration
-          surfaces with predictable errors and offline-aware behavior.
-        </li>
-      </ul>
-
-      <h2>Reliability lives in the client experience too</h2>
-      <p>
-        License checks happen inside somebody else’s product, often at the worst
-        possible time to fail. The SDK work therefore focused on clear failure modes,
-        conservative caching, and explicit recovery behavior. A temporary network
-        problem should not look the same as a revoked or invalid license, and a
-        client should never need to guess which state it received.
+        I kept the short-lived cache for the common validation path, but made the
+        endpoints that change a key or its activations delete that key’s cached
+        result. The next check goes back to the database and returns the new state
+        immediately.
       </p>
 
-      <h2>What I learned</h2>
+      <h2>The local billing row could disagree with Stripe</h2>
       <p>
-        Developer experience is not a polish layer. It is the product architecture
-        made visible. When the examples, SDKs, dashboard, and API all tell the same
-        story, developers can adopt the product with confidence. When they disagree,
-        even a technically sound backend feels unreliable.
+        A webhook can be delayed, retried, or missed. That meant the plan stored in
+        the application could say “paid” after Stripe no longer had an active or
+        trialing subscription, or could point at a price that no longer mapped to a
+        known plan.
       </p>
-      <blockquote>
-        The best platform work removes decisions from the integration path without
-        hiding the states a developer actually needs to understand.
-      </blockquote>
-
-      <h2>Where the project stands</h2>
       <p>
-        GrebKey now has the shape of a complete developer platform: account and
-        product management, license lifecycle tools, billing, public documentation,
-        language-specific guides, and maintained client libraries. The remaining
-        work is the familiar work of any real product—measuring the path, tightening
-        the rough edges, and continuing to verify the live experience.
+        I added a reconciliation step that asks Stripe for the customer’s current
+        subscriptions, accepts only statuses that actually grant access, maps the
+        returned price back to a plan, and updates the local row. If no subscription
+        grants access, a stale paid account is moved back to the free plan.
+      </p>
+
+      <h2>The API docs said “bearer auth” without explaining it</h2>
+      <p>
+        The protected routes referenced a bearer authentication scheme, but the
+        generated OpenAPI file did not include the scheme definition. Documentation
+        tools could see that authentication was required without knowing that the
+        token belonged in the Authorization header.
+      </p>
+      <p>
+        I fixed the document generator to publish the missing security definition
+        and kept account, billing, and sign-in routes out of the public reference.
+        The same contract now feeds the documentation and the examples used by the
+        Node and Python libraries, so an API change has fewer handwritten copies to
+        drift.
+      </p>
+
+      <h2>What changed in how I test it</h2>
+      <p>
+        I stopped treating a successful build as proof that the product worked. The
+        checks now cover the public validation response, cache invalidation after a
+        key change, generated OpenAPI output, billing reconciliation, and the live
+        dashboard-to-API handoff as separate paths.
       </p>
     </BlogLayout>
   )

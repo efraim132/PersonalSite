@@ -91,6 +91,7 @@
   font-size: 0.9rem;
   font-weight: 700;
   text-decoration: none;
+  border-radius: var(--radius-control);
 }
 
 .primaryAction {
@@ -106,7 +107,13 @@
 
 .secondaryAction {
   color: var(--color-text-primary) !important;
-  border-bottom: 1px solid var(--color-border-strong);
+  border: 1px solid var(--color-border-strong);
+  background: rgba(22, 22, 40, 0.45);
+}
+
+.secondaryAction:hover {
+  border-color: var(--color-accent-light);
+  background: rgba(28, 28, 56, 0.72);
 }
 
 .capabilities {

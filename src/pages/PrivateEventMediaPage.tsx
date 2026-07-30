@@ -3,83 +3,54 @@ import BlogLayout from '../components/BlogLayout/BlogLayout'
 export default function PrivateEventMediaPage() {
   return (
     <BlogLayout
-      title="A private event-media workflow that stayed simple"
+      title="Building a wedding image sharing service"
       date="Summer 2026"
       tags={['React', 'Cloud', 'Media delivery', 'Privacy']}
-      intro="The project looked simple from the outside: let guests contribute photos, help an organizer curate them, and make selected images pleasant to share. The real work was in the boundaries."
-      disclosure="This retrospective omits the people involved, event identity, event date, locations, invite details, private links, uploaded media, access configuration, and storage identifiers."
+      intro="I built a wedding image sharing service where guests could upload from their phones, the organizer could sort everything privately, and selected photos could be shared without exposing the original files."
+      disclosure="This story omits the people involved, wedding date, locations, invite details, private links, uploaded media, access configuration, and storage identifiers."
     >
-      <h2>A small product with three different users</h2>
+      <h2>Phone originals were too heavy for the gallery</h2>
       <p>
-        The experience had to work for a guest arriving from a phone, an organizer
-        managing a growing collection, and a recipient opening a shared image later.
-        Each user needed a different amount of context and control.
+        Guests could upload modern phone photos that were much larger than the screen
+        displaying them. Serving those files directly made the first gallery load
+        slow and wasted bandwidth every time somebody opened it.
       </p>
       <p>
-        I treated those as three focused workflows instead of one overloaded gallery:
-        contribute, curate, and share. That kept the guest path short while giving
-        the private management view the tools it needed.
-      </p>
-
-      <h2>The features that mattered</h2>
-      <ul>
-        <li>
-          <strong>Mobile-first contribution:</strong> a direct upload path with clear
-          progress and useful failure feedback.
-        </li>
-        <li>
-          <strong>Private curation:</strong> management tools for reviewing,
-          selecting, and organizing media without exposing the administrative
-          surface.
-        </li>
-        <li>
-          <strong>Progressive galleries:</strong> fast initial previews that sharpen
-          as better media becomes available.
-        </li>
-        <li>
-          <strong>Intentional sharing states:</strong> clear differences between
-          selected, published, unavailable, and removed media.
-        </li>
-        <li>
-          <strong>Mobile management polish:</strong> touch-friendly selection,
-          readable actions, and layouts that hold up on the device most likely to be
-          used during an event.
-        </li>
-        <li>
-          <strong>Production transport protections:</strong> secure delivery and
-          strict browser transport behavior on the public surface.
-        </li>
-      </ul>
-
-      <h2>Image quality is a product decision</h2>
-      <p>
-        A gallery can feel slow even when the server is fast, and it can feel cheap
-        even when the original file is excellent. The solution was a progressive
-        media path: send an appropriately sized preview quickly, then let the image
-        settle into a sharper version without disrupting the layout.
-      </p>
-      <p>
-        Shared images required a different balance. They needed enough quality to
-        stand on their own without turning every open into an original-file
-        download. Those decisions were tested as visible user experience, not only
-        as successful network requests.
+        During upload, I generate a WebP preview capped at 900 by 900 pixels and store
+        it next to the retained file. Galleries use that preview through an
+        authenticated Worker route. Large source photos take a separate temporary
+        path for resizing, and that temporary object is deleted after the transform.
       </p>
 
-      <h2>Privacy changed what “done” meant</h2>
+      <h2>Simultaneous uploads could cross the storage limit</h2>
       <p>
-        The application handled personal media for a private event, so success was
-        not just a working upload. The public and administrative surfaces needed
-        different access boundaries. Unpublished media needed unambiguous behavior.
-        Notes, screenshots, test data, and release checks also had to avoid carrying
-        private context into places it did not belong.
+        Checking “is there enough space?” and updating the total as two separate
+        operations would let two uploads both claim the final available bytes. The
+        database and object storage also cannot share one transaction, so a failed
+        write could leave the count wrong.
+      </p>
+      <p>
+        I reserve the exact bytes for the retained file and preview with one
+        conditional database update. Only then are both private objects written. If
+        either write or the final database insert fails, the objects are removed and
+        the reservation is released. A reconciliation check reports the rare case
+        where a Worker stops between those steps.
       </p>
 
-      <h2>What I learned</h2>
+      <h2>A guest upload link could not become an admin link</h2>
       <p>
-        Small private tools benefit from the same product discipline as larger
-        systems. Keep the public path obvious, keep administrative power narrow,
-        verify the real mobile experience, and treat privacy as a property of the
-        whole workflow—not a sentence added at the end.
+        Each guest upload belongs to an isolated collection. The guest token can add
+        to and review that collection, but it cannot open the management area or see
+        another guest’s uploads. Organizer actions use a separate secure session.
+      </p>
+
+      <h2>Sharing needed an off switch</h2>
+      <p>
+        A share starts disabled and gets an unguessable token. The organizer can
+        enable it, disable it without changing the link, or rotate the token
+        entirely. The page is marked not to be indexed, checks that each requested
+        image still belongs to the active share, and serves a display copy instead of
+        the private original.
       </p>
     </BlogLayout>
   )

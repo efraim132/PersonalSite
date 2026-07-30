@@ -18,29 +18,29 @@ export default function Hero() {
       <div className={`container ${styles.content}`}>
         <div className={styles.status}>
           <span aria-hidden="true" />
-          Software developer · systems builder
+          Software, hardware, and notes
         </div>
         <h1 className={styles.name}>
-          I build the parts that have to <em>keep working.</em>
+          I make things and <em>write down what I learn.</em>
         </h1>
         <p className={styles.subtitle}>
-          Developer platforms, real-time operations, cloud products, and the
-          occasional strange little machine.
+          This is where I keep software projects, hardware experiments, and
+          stories from figuring them out.
         </p>
         <div className={styles.actions}>
           <Magnet>
             <a href="#projects" className={styles.primaryAction}>
-              Explore the work <span aria-hidden="true">↘</span>
+              Browse projects <span aria-hidden="true">↘</span>
             </a>
           </Magnet>
           <a href="#writing" className={styles.secondaryAction}>
-            Read the field notes
+            Read the stories
           </a>
         </div>
-        <div className={styles.capabilities} aria-label="Core capabilities">
-          <span>01 · Product engineering</span>
-          <span>02 · Cloud operations</span>
-          <span>03 · Developer experience</span>
+        <div className={styles.capabilities} aria-label="What you will find here">
+          <span>01 · Software projects</span>
+          <span>02 · Hardware experiments</span>
+          <span>03 · Build notes</span>
         </div>
       </div>
     </section>
