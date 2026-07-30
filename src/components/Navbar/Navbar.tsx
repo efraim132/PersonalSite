@@ -27,7 +27,6 @@ export default function Navbar() {
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
       <div className={`container ${styles.inner}`}>
         <Link to="/" className={styles.brand}>
-          <span>EG</span>
           Efraim Grebnev
         </Link>
 
