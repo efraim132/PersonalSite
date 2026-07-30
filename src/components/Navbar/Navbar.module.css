@@ -9,7 +9,7 @@
 }
 
 .scrolled {
-  background-color: rgba(9, 11, 10, 0.88);
+  background-color: rgba(10, 10, 18, 0.88);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   border-bottom: 1px solid var(--color-border);
@@ -36,7 +36,7 @@
   place-items: center;
   width: 34px;
   height: 34px;
-  color: #0b0e0a;
+  color: var(--color-bg-primary);
   background: var(--color-signal);
   font-family: var(--font-mono);
   font-size: 0.72rem;
@@ -69,7 +69,7 @@
 }
 
 .resume:hover {
-  color: #0a0d09 !important;
+  color: var(--color-bg-primary) !important;
   border-color: var(--color-signal);
   background: var(--color-signal);
 }
@@ -119,7 +119,7 @@
     left: 0;
     right: 0;
     flex-direction: column;
-    background-color: rgba(9, 11, 10, 0.98);
+    background-color: rgba(10, 10, 18, 0.98);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     padding: 1.5rem;

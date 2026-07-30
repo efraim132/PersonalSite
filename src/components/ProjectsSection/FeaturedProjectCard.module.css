@@ -86,7 +86,7 @@
   gap: 1.25rem;
   padding: 0.65rem 0.9rem;
   background-color: var(--color-signal);
-  color: #0a0d09 !important;
+  color: var(--color-bg-primary) !important;
   font-size: 0.9rem;
   font-weight: 600;
   transition: background-color var(--transition-fast);
@@ -95,7 +95,7 @@
 
 .readMore:hover {
   background-color: var(--color-signal-strong);
-  color: #0a0d09 !important;
+  color: var(--color-bg-primary) !important;
 }
 
 .viewProject {

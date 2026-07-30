@@ -5,7 +5,7 @@
 .rb-spotlight-card {
   --mouse-x: 50%;
   --mouse-y: 50%;
-  --spotlight-color: rgba(164, 255, 88, 0.18);
+  --spotlight-color: rgba(123, 154, 216, 0.18);
   position: relative;
   overflow: hidden;
   isolation: isolate;

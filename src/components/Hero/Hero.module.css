@@ -20,8 +20,8 @@
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(9, 11, 10, 0.98) 0%, rgba(9, 11, 10, 0.88) 58%, rgba(9, 11, 10, 0.55) 100%),
-    linear-gradient(0deg, rgba(9, 11, 10, 0.9) 0%, transparent 50%);
+    linear-gradient(90deg, rgba(10, 10, 18, 0.98) 0%, rgba(10, 10, 18, 0.88) 58%, rgba(10, 10, 18, 0.55) 100%),
+    linear-gradient(0deg, rgba(10, 10, 18, 0.9) 0%, transparent 50%);
   z-index: 1;
 }
 
@@ -50,7 +50,7 @@
   height: 8px;
   border-radius: 50%;
   background: var(--color-signal);
-  box-shadow: 0 0 18px rgba(164, 255, 88, 0.8);
+  box-shadow: 0 0 18px rgba(123, 154, 216, 0.8);
 }
 
 .name {
@@ -95,12 +95,12 @@
 
 .primaryAction {
   gap: 2rem;
-  color: #0a0d09 !important;
+  color: var(--color-bg-primary) !important;
   background: var(--color-signal);
 }
 
 .primaryAction:hover {
-  color: #0a0d09 !important;
+  color: var(--color-bg-primary) !important;
   background: var(--color-signal-strong);
 }
 
@@ -141,7 +141,7 @@
     background: linear-gradient(
       140deg,
       var(--color-bg-primary) 0%,
-      #14200e 100%
+      #111122 100%
     );
   }
 

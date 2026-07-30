@@ -1,17 +1,17 @@
 :root {
-  --color-bg-primary: #090b0a;
-  --color-bg-secondary: #0e110f;
-  --color-bg-card: #121613;
-  --color-bg-card-hover: #171c18;
-  --color-signal: #a4ff58;
-  --color-signal-strong: #c4ff8f;
-  --color-accent: #70c935;
-  --color-accent-light: #a4ff58;
-  --color-text-primary: #f1f4ee;
-  --color-text-secondary: #a4aaa1;
-  --color-text-muted: #697068;
-  --color-border: rgba(232, 244, 226, 0.11);
-  --color-border-strong: rgba(232, 244, 226, 0.22);
+  --color-bg-primary: #0a0a12;
+  --color-bg-secondary: #111122;
+  --color-bg-card: #161628;
+  --color-bg-card-hover: #1c1c38;
+  --color-signal: #7b9ad8;
+  --color-signal-strong: #e8e8f0;
+  --color-accent: #4b6cb7;
+  --color-accent-light: #7b9ad8;
+  --color-text-primary: #e8e8f0;
+  --color-text-secondary: #9898b0;
+  --color-text-muted: #686880;
+  --color-border: #2a2a40;
+  --color-border-strong: #4b6cb7;
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
   --section-padding: clamp(5.5rem, 10vw, 9rem) 0;
@@ -67,7 +67,7 @@ img {
 }
 
 ::selection {
-  color: #0a0d09;
+  color: var(--color-bg-primary);
   background: var(--color-signal);
 }
 
