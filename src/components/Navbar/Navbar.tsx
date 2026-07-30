@@ -3,9 +3,9 @@ import { useLocation, Link } from 'react-router'
 import styles from './Navbar.module.css'
 
 const navLinks = [
+  { label: 'Work', hash: '#projects' },
+  { label: 'Writing', hash: '#writing' },
   { label: 'About', hash: '#about' },
-  // { label: 'Travels', hash: '#travels' },
-  { label: 'Projects', hash: '#projects' },
   { label: 'Contact', hash: '#contact' },
 ]
 
@@ -27,7 +27,8 @@ export default function Navbar() {
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
       <div className={`container ${styles.inner}`}>
         <Link to="/" className={styles.brand}>
-          Efraim
+          <span>EG</span>
+          Efraim Grebnev
         </Link>
 
         <button
@@ -55,7 +56,7 @@ export default function Navbar() {
             </li>
           ))}
           <li>
-            <a href="/Resume.pdf" className={styles.link} download>
+            <a href="/Resume.pdf" className={styles.resume} download>
               Resume
             </a>
           </li>

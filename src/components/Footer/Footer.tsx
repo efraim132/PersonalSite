@@ -4,9 +4,12 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className="container">
-        <p className={styles.text}>
-          Copyright &copy; {new Date().getFullYear()} Efraim Grebnev
-        </p>
+        <div className={styles.inner}>
+          <p className={styles.text}>
+            &copy; {new Date().getFullYear()} Efraim Grebnev
+          </p>
+          <p className={styles.note}>Built in public. Private details stay private.</p>
+        </div>
       </div>
     </footer>
   )

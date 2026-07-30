@@ -1,8 +1,44 @@
+import { Link } from 'react-router'
 import type { Project } from '../../data/projects'
 import styles from './ProjectTable.module.css'
 
 interface ProjectTableProps {
   projects: Project[]
+}
+
+function ProjectDestination({ project, mobile = false }: { project: Project; mobile?: boolean }) {
+  if (project.detailRoute != null) {
+    let label = 'Read ↗'
+    if (mobile) {
+      label = 'Read the story ↗'
+    }
+
+    return (
+      <Link to={project.detailRoute} className={styles.link}>
+        {label}
+      </Link>
+    )
+  }
+
+  if (project.url != null) {
+    let label = 'Visit ↗'
+    if (mobile) {
+      label = 'View project ↗'
+    }
+
+    return (
+      <a
+        href={project.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={styles.link}
+      >
+        {label}
+      </a>
+    )
+  }
+
+  return <span className={styles.private}>Private project</span>
 }
 
 export default function ProjectTable({ projects }: ProjectTableProps) {
@@ -26,14 +62,7 @@ export default function ProjectTable({ projects }: ProjectTableProps) {
               <td className={styles.name}>{project.name}</td>
               <td className={styles.date}>{project.date}</td>
               <td>
-                <a
-                  href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.link}
-                >
-                  View &rarr;
-                </a>
+                <ProjectDestination project={project} />
               </td>
             </tr>
           ))}
@@ -49,14 +78,7 @@ export default function ProjectTable({ projects }: ProjectTableProps) {
               <span className={styles.date}>{project.date}</span>
             </div>
             <div className={styles.mobileName}>{project.name}</div>
-            <a
-              href={project.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.link}
-            >
-              View Project &rarr;
-            </a>
+            <ProjectDestination project={project} mobile />
           </div>
         ))}
       </div>

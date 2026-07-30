@@ -1,26 +1,22 @@
 :root {
-  /* Colors */
-  --color-bg-primary: #0a0a12;
-  --color-bg-secondary: #111122;
-  --color-bg-card: #161628;
-  --color-bg-card-hover: #1c1c38;
-  --color-accent: #4b6cb7;
-  --color-accent-light: #7b9ad8;
-  --color-text-primary: #e8e8f0;
-  --color-text-secondary: #9898b0;
-  --color-text-muted: #686880;
-  --color-border: #2a2a40;
-
-  /* Typography */
+  --color-bg-primary: #090b0a;
+  --color-bg-secondary: #0e110f;
+  --color-bg-card: #121613;
+  --color-bg-card-hover: #171c18;
+  --color-signal: #a4ff58;
+  --color-signal-strong: #c4ff8f;
+  --color-accent: #70c935;
+  --color-accent-light: #a4ff58;
+  --color-text-primary: #f1f4ee;
+  --color-text-secondary: #a4aaa1;
+  --color-text-muted: #697068;
+  --color-border: rgba(232, 244, 226, 0.11);
+  --color-border-strong: rgba(232, 244, 226, 0.22);
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
-
-  /* Spacing */
-  --section-padding: 6rem 0;
-  --container-max: 1100px;
-  --container-padding: 0 1.5rem;
-
-  /* Transitions */
+  --section-padding: clamp(5.5rem, 10vw, 9rem) 0;
+  --container-max: 1240px;
+  --container-padding: 0 clamp(1.25rem, 4vw, 3rem);
   --transition-fast: 150ms ease;
   --transition-normal: 300ms ease;
 }
@@ -36,6 +32,7 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  background: var(--color-bg-primary);
 }
 
 body {
@@ -45,6 +42,7 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 a {
@@ -54,7 +52,7 @@ a {
 }
 
 a:hover {
-  color: var(--color-accent);
+  color: var(--color-signal);
 }
 
 img {
@@ -66,4 +64,52 @@ img {
   max-width: var(--container-max);
   margin: 0 auto;
   padding: var(--container-padding);
+}
+
+::selection {
+  color: #0a0d09;
+  background: var(--color-signal);
+}
+
+.eyebrow {
+  margin-bottom: 1rem;
+  color: var(--color-signal);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.section-title {
+  max-width: 760px;
+  font-size: clamp(2.35rem, 6vw, 5rem);
+  font-weight: 700;
+  letter-spacing: -0.055em;
+  line-height: 0.98;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-signal);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

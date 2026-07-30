@@ -4,14 +4,88 @@ export interface Project {
   platform: string
   date: string
   sortDate: string
-  url: string
+  url?: string
   description?: string
   featured?: boolean
   detailRoute?: string
   tags?: string[]
+  privateCaseStudy?: boolean
 }
 
 export const projects: Project[] = [
+  {
+    id: 'grebkey',
+    name: 'GrebKey developer platform',
+    platform: 'Cloud platform',
+    date: '2026',
+    sortDate: '2026-07-30',
+    url: 'https://grebkey.efraim.us',
+    description:
+      'A license-key platform spanning API design, authentication, billing, developer docs, and Node and Python SDKs.',
+    featured: true,
+    detailRoute: '/writing/grebkey',
+    tags: ['Cloudflare', 'TypeScript', 'Python'],
+  },
+  {
+    id: 'realtime-operations',
+    name: 'Real-time service operations',
+    platform: 'Private case study',
+    date: '2026',
+    sortDate: '2026-07-22',
+    description:
+      'Operator controls, automatic capacity management, health signals, alerts, and recoverable failover for a live transcription product.',
+    featured: true,
+    detailRoute: '/writing/realtime-operations',
+    tags: ['Reliability', 'Operations', 'Product'],
+    privateCaseStudy: true,
+  },
+  {
+    id: 'private-event-media',
+    name: 'Private event media workflow',
+    platform: 'Private case study',
+    date: '2026',
+    sortDate: '2026-07-26',
+    description:
+      'A mobile-first upload, curation, and sharing flow with progressive media delivery and intentional privacy boundaries.',
+    featured: true,
+    detailRoute: '/writing/private-event-media',
+    tags: ['React', 'Cloud', 'Privacy'],
+    privateCaseStudy: true,
+  },
+  {
+    id: 'nudge',
+    name: 'Nudge control surface',
+    platform: 'Hardware + desktop',
+    date: '2026',
+    sortDate: '2026-04-18',
+    url: 'https://github.com/Easease/Nudge',
+    description:
+      'Firmware, a framed binary device protocol, and a desktop companion for a multi-display physical control surface.',
+    featured: true,
+    tags: ['MicroPython', 'USB', 'Embedded'],
+  },
+  {
+    id: 'atc-voice',
+    name: 'ATCVoice',
+    platform: 'Audio experiment',
+    date: '2026',
+    sortDate: '2026-05-15',
+    url: 'https://github.com/efraim132/ATCVoice',
+    description:
+      'A phraseology-aware aviation radio generator with synthesized voices and a custom signal-processing chain.',
+    tags: ['Python', 'Audio', 'AI'],
+  },
+  {
+    id: 'deej-wails',
+    name: 'Desktop audio & display console',
+    platform: 'Windows desktop',
+    date: '2026',
+    sortDate: '2026-04-17',
+    url: 'https://github.com/efraim132/DeejWails',
+    description:
+      'A Go and React desktop console for audio sessions, monitor controls, app categories, and game detection.',
+    tags: ['Go', 'React', 'Wails'],
+  },
   {
     id: 'eenet',
     name: 'ComputerCraft EENet',
@@ -20,7 +94,6 @@ export const projects: Project[] = [
     sortDate: '2025-10-28',
     url: 'https://github.com/GrebCo/CC-Tweaked-Amazon-OS',
     description: 'A networking and browser system framework for ComputerCraft Tweaked in Minecraft.',
-    featured: true,
     detailRoute: '/projects/eenet',
     tags: ['Lua', 'ComputerCraft', 'Networking'],
   },
@@ -32,7 +105,6 @@ export const projects: Project[] = [
     sortDate: '2025-09-28',
     url: 'https://efraim132.github.io/SuperLua/index.html',
     description: 'A transpiler that compiles Lua with classes, into normal Lua.',
-    featured: true,
     detailRoute: '/projects/superlua',
     tags: ['Python', 'Lua', 'Compiler Design'],
   },
@@ -107,6 +179,15 @@ export const projects: Project[] = [
     sortDate: '2024-10-09',
     url: 'https://github.com/efraim132/PersonalSite',
     tags: ['React', 'Web'],
+  },
+  {
+    id: 'grebco-site',
+    name: 'GrebCo website',
+    platform: 'Company website',
+    date: '2026',
+    sortDate: '2026-07-30',
+    url: 'https://github.com/efraim132/GrebCo-Website',
+    tags: ['React', 'Design system'],
   },
   {
     id: 'lha6',

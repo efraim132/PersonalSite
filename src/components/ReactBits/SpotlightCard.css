@@ -1,0 +1,39 @@
+/*
+ * Adapted from React Bits by David Haz.
+ * See THIRD_PARTY_NOTICES.md for the license notice.
+ */
+.rb-spotlight-card {
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+  --spotlight-color: rgba(164, 255, 88, 0.18);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.rb-spotlight-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(
+      520px circle at var(--mouse-x) var(--mouse-y),
+      var(--spotlight-color),
+      transparent 72%
+    );
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 400ms ease;
+}
+
+.rb-spotlight-card:hover::before,
+.rb-spotlight-card:focus-within::before {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rb-spotlight-card::before {
+    display: none;
+  }
+}

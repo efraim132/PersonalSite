@@ -1,7 +1,16 @@
 import { useEffect, useRef } from 'react'
-import hljs from 'highlight.js'
+import hljs from 'highlight.js/lib/core'
+import lua from 'highlight.js/lib/languages/lua'
+import plaintext from 'highlight.js/lib/languages/plaintext'
+import python from 'highlight.js/lib/languages/python'
+import typescript from 'highlight.js/lib/languages/typescript'
 import './hljs-theme.css'
 import styles from './CodeBlock.module.css'
+
+hljs.registerLanguage('lua', lua)
+hljs.registerLanguage('plaintext', plaintext)
+hljs.registerLanguage('python', python)
+hljs.registerLanguage('typescript', typescript)
 
 interface CodeBlockProps {
   codeString: string
@@ -27,6 +36,16 @@ export default function CodeBlock({
 
   const trimmed = codeString.trim()
   const lines = trimmed.split('\n')
+  const normalizedLanguage = language.toLowerCase()
+  let highlightLanguage = normalizedLanguage
+
+  if (normalizedLanguage === 'superlua') {
+    highlightLanguage = 'lua'
+  }
+
+  if (normalizedLanguage === 'minimark') {
+    highlightLanguage = 'plaintext'
+  }
 
   return (
     <div className={styles.wrapper}>
@@ -44,7 +63,7 @@ export default function CodeBlock({
             ))}
           </span>
         )}
-        <code ref={codeRef} className={`language-${language} ${styles.code}`}>
+        <code ref={codeRef} className={`language-${highlightLanguage} ${styles.code}`}>
           {trimmed}
         </code>
       </pre>

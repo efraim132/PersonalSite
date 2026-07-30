@@ -5,6 +5,9 @@ import Footer from './components/Footer/Footer'
 import HomePage from './pages/HomePage'
 import SuperLuaPage from './pages/SuperLuaPage'
 import EENetPage from './pages/EENetPage'
+import GrebKeyPage from './pages/GrebKeyPage'
+import RealtimeOperationsPage from './pages/RealtimeOperationsPage'
+import PrivateEventMediaPage from './pages/PrivateEventMediaPage'
 import NotFoundPage from './pages/NotFoundPage'
 
 function ScrollToTop() {
@@ -25,6 +28,9 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/projects/superlua" element={<SuperLuaPage />} />
           <Route path="/projects/eenet" element={<EENetPage />} />
+          <Route path="/writing/grebkey" element={<GrebKeyPage />} />
+          <Route path="/writing/realtime-operations" element={<RealtimeOperationsPage />} />
+          <Route path="/writing/private-event-media" element={<PrivateEventMediaPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>

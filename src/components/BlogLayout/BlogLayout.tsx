@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Link } from 'react-router'
 import styles from './BlogLayout.module.css'
 
@@ -6,33 +7,61 @@ interface BlogLayoutProps {
   date: string
   tags: string[]
   projectUrl?: string
+  intro?: string
+  disclosure?: string
   children: React.ReactNode
 }
 
-export default function BlogLayout({ title, date, tags, projectUrl, children }: BlogLayoutProps) {
+export default function BlogLayout({
+  title,
+  date,
+  tags,
+  projectUrl,
+  intro,
+  disclosure,
+  children,
+}: BlogLayoutProps) {
+  useEffect(() => {
+    const previousTitle = document.title
+    document.title = `${title} | Efraim Grebnev`
+
+    return () => {
+      document.title = previousTitle
+    }
+  }, [title])
+
   return (
     <article className={styles.article}>
       <div className={styles.container}>
-        <Link to="/#projects" className={styles.back}>
-          &larr; Back to Projects
+        <Link to="/#writing" className={styles.back}>
+          ← Back to field notes
         </Link>
 
         <header className={styles.header}>
+          <p className="eyebrow">Project retrospective</p>
           <h1 className={styles.title}>{title}</h1>
+          {intro != null && <p className={styles.intro}>{intro}</p>}
           <div className={styles.meta}>
-            <time className={styles.date}>{date}</time>
+            <span className={styles.date}>Project window · {date}</span>
             <div className={styles.tags}>
               {tags.map((tag) => (
                 <span key={tag} className={styles.tag}>{tag}</span>
               ))}
             </div>
           </div>
-          {projectUrl && (
+          {projectUrl != null && (
             <a href={projectUrl} target="_blank" rel="noopener noreferrer" className={styles.projectLink}>
               View Project &rarr;
             </a>
           )}
         </header>
+
+        {disclosure != null && (
+          <aside className={styles.disclosure}>
+            <strong>Privacy boundary</strong>
+            <p>{disclosure}</p>
+          </aside>
+        )}
 
         <div className={styles.content}>
           {children}

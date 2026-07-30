@@ -1,23 +1,20 @@
 .card {
   background-color: var(--color-bg-card);
   border: 1px solid var(--color-border);
-  border-radius: 12px;
-  overflow: hidden;
-  transition: background-color var(--transition-normal), transform var(--transition-normal);
+  min-height: 100%;
+  transition: border-color var(--transition-normal), transform var(--transition-normal);
 }
 
 .card:hover {
-  background-color: var(--color-bg-card-hover);
+  border-color: var(--color-border-strong);
   transform: translateY(-2px);
 }
 
-.accentBar {
-  height: 3px;
-  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-light));
-}
-
 .content {
-  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
 }
 
 .header {
@@ -30,7 +27,7 @@
 .platform {
   font-size: 0.8rem;
   font-weight: 600;
-  color: var(--color-accent-light);
+  color: var(--color-signal);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -41,10 +38,12 @@
 }
 
 .name {
-  font-size: 1.35rem;
+  max-width: 760px;
+  font-size: clamp(1.5rem, 3vw, 2.7rem);
   font-weight: 700;
-  margin-bottom: 0.75rem;
-  letter-spacing: -0.01em;
+  margin-bottom: 1rem;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
 }
 
 .tags {
@@ -58,8 +57,10 @@
   font-size: 0.75rem;
   padding: 0.2rem 0.6rem;
   border-radius: 999px;
-  background-color: rgba(75, 108, 183, 0.15);
-  color: var(--color-accent-light);
+  color: var(--color-text-muted);
+  border-bottom: 1px solid var(--color-border);
+  border-radius: 0;
+  background: transparent;
   font-weight: 500;
 }
 
@@ -68,20 +69,24 @@
   font-size: 0.95rem;
   line-height: 1.6;
   margin-bottom: 1.5rem;
+  max-width: 720px;
 }
 
 .actions {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
   align-items: center;
+  margin-top: auto;
 }
 
 .readMore {
-  display: inline-block;
-  padding: 0.5rem 1.25rem;
-  background-color: var(--color-accent);
-  color: #fff !important;
-  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 0.65rem 0.9rem;
+  background-color: var(--color-signal);
+  color: #0a0d09 !important;
   font-size: 0.9rem;
   font-weight: 600;
   transition: background-color var(--transition-fast);
@@ -89,8 +94,8 @@
 }
 
 .readMore:hover {
-  background-color: var(--color-accent-light);
-  color: #fff !important;
+  background-color: var(--color-signal-strong);
+  color: #0a0d09 !important;
 }
 
 .viewProject {
@@ -102,4 +107,12 @@
 
 .viewProject:hover {
   color: var(--color-text-primary) !important;
+}
+
+.private {
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
