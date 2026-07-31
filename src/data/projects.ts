@@ -53,40 +53,6 @@ export const projects: Project[] = [
     privateCaseStudy: true,
   },
   {
-    id: 'nudge',
-    name: 'Nudge control surface',
-    platform: 'Hardware + desktop',
-    date: '2026',
-    sortDate: '2026-04-18',
-    url: 'https://github.com/Easease/Nudge',
-    description:
-      'Firmware, a framed binary device protocol, and a desktop companion for a multi-display physical control surface.',
-    featured: false,
-    tags: ['MicroPython', 'USB', 'Embedded'],
-  },
-  {
-    id: 'atc-voice',
-    name: 'ATCVoice',
-    platform: 'Audio experiment',
-    date: '2026',
-    sortDate: '2026-05-15',
-    url: 'https://github.com/efraim132/ATCVoice',
-    description:
-      'A phraseology-aware aviation radio generator with synthesized voices and a custom signal-processing chain.',
-    tags: ['Python', 'Audio', 'AI'],
-  },
-  {
-    id: 'deej-wails',
-    name: 'Desktop audio & display console',
-    platform: 'Windows desktop',
-    date: '2026',
-    sortDate: '2026-04-17',
-    url: 'https://github.com/efraim132/DeejWails',
-    description:
-      'A Go and React desktop console for audio sessions, monitor controls, app categories, and game detection.',
-    tags: ['Go', 'React', 'Wails'],
-  },
-  {
     id: 'eenet',
     name: 'ComputerCraft EENet',
     platform: 'Lua',
@@ -208,14 +174,5 @@ export const projects: Project[] = [
     sortDate: '2018-09-11',
     url: 'https://github.com/WilliamDann/hack2018',
     tags: ['Hackathon', 'Web'],
-  },
-  {
-    id: 'little-knight',
-    name: 'Little Knight',
-    platform: 'Windows',
-    date: '8/24/2018',
-    sortDate: '2018-08-24',
-    url: 'https://github.com/efraim132/LittleKnight',
-    tags: ['Game', 'Windows'],
   },
 ]
