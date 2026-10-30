@@ -13,8 +13,7 @@ export default function Journal() {
               <h2 className="section-title">Notes from building things.</h2>
             </div>
             <p className={styles.intro}>
-              Longer write-ups about what I tried, what got difficult, and what
-              I would remember for the next project.
+              How the projects work, the problems I ran into, and the fixes.
             </p>
           </div>
         </div>

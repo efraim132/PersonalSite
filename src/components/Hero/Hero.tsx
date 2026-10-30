@@ -27,18 +27,17 @@ export default function Hero() {
           <div className={styles.identity}>
             <img src={profilePic} alt="" width="44" height="44" />
             <span>
-              Efraim Grebnev<span>Software, hardware, and a curious mind.</span>
+              Efraim Grebnev<span>Software developer and Navy veteran.</span>
             </span>
           </div>
           <h1>
-            I make things.
+            My projects
             <br />
-            And share what
-            <br className={styles.desktopBreak} /> I learn.
+            and build notes.
           </h1>
           <p className={styles.subtitle}>
-            Software projects, hardware experiments, and notes from figuring
-            them out. A collection that keeps growing.
+            I write about the software and hardware I build, what broke, and how
+            I fixed it.
           </p>
           <div className={styles.actions}>
             <a href="#projects" className="pill">
@@ -54,7 +53,8 @@ export default function Hero() {
             <video
               ref={videoRef}
               poster="/navy-poster.jpg"
-              preload="none"
+              autoPlay
+              preload="auto"
               muted
               loop
               playsInline
@@ -69,9 +69,9 @@ export default function Hero() {
             <div className={styles.videoCaption}>
               <span>Before software</span>
               <strong>
-                A different kind
+                Power and
                 <br />
-                of systems work.
+                propulsion systems.
               </strong>
             </div>
             {!failed && (
@@ -110,7 +110,7 @@ export default function Hero() {
         </figure>
       </div>
       <div className={`container ${styles.bottom}`}>
-        <span>Made to be explored.</span>
+        <span>Projects and writing</span>
         <a href="#projects" aria-label="Explore selected work">
           ↓
         </a>

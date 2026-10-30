@@ -67,19 +67,26 @@ test('appearance and solid surfaces persist, System follows device preference', 
     .toBeNull()
 })
 
-test('video starts paused and responds to its controls', async ({ page }) => {
+test('video autoplays muted and can be paused and resumed', async ({
+  page,
+}) => {
   await page.goto('/')
+  const video = page.locator('video')
+  await expect.poll(() => video.evaluate((element) => element.muted)).toBe(true)
   await expect
-    .poll(() => page.locator('video').evaluate((video) => video.paused))
-    .toBe(true)
-  await page.getByRole('button', { name: 'Play Navy video' }).click()
+    .poll(() => video.evaluate((element) => element.currentTime))
+    .toBeGreaterThan(0)
   await expect(
     page.getByRole('button', { name: 'Pause Navy video' }),
   ).toBeVisible()
   await page.getByRole('button', { name: 'Pause Navy video' }).click()
   await expect
-    .poll(() => page.locator('video').evaluate((video) => video.paused))
+    .poll(() => video.evaluate((element) => element.paused))
     .toBe(true)
+  await page.getByRole('button', { name: 'Play Navy video' }).click()
+  await expect
+    .poll(() => video.evaluate((element) => element.paused))
+    .toBe(false)
 })
 
 test('reduced motion disables entrances and smooth scrolling', async ({

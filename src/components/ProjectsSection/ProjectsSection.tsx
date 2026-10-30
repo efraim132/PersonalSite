@@ -17,8 +17,8 @@ export default function ProjectsSection() {
               <h2 className={styles.heading}>Selected work.</h2>
             </div>
             <p className={styles.intro}>
-              Some are long-running tools, some are experiments, and a few are
-              private projects I can only describe in broad strokes.
+              Software I maintain, experiments, and notes from private projects.
+              Private write-ups omit client and user details.
             </p>
           </div>
         </div>
@@ -34,7 +34,7 @@ export default function ProjectsSection() {
         <div>
           <div className={styles.archiveHeading}>
             <h3 className={styles.allHeading}>Project archive</h3>
-            <span>{all.length} projects, experiments, and old builds</span>
+            <span>{all.length} projects</span>
           </div>
           <ProjectTable projects={all} />
         </div>

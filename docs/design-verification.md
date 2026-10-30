@@ -10,7 +10,7 @@ The blue Apple-inspired redesign is implemented on `feat/macos-design-rework`. N
 - Production preview smoke checks load the homepage, five article routes, and the not-found page without uncaught browser errors.
 - Desktop and mobile screenshots were inspected in light and dark appearances. Article views were also inspected.
 
-The browser suite checks mobile disclosure behavior, Escape and focus return, repeated section navigation, direct routes, malformed fragments, browser history, resume download, video play/pause, saved appearance, blocked storage, forced-color selection, reduced motion, 200% text, and horizontal overflow at five widths.
+The browser suite checks mobile disclosure behavior, Escape and focus return, repeated section navigation, direct routes, malformed fragments, browser history, resume download, muted video autoplay and pause/resume, saved appearance, blocked storage, forced-color selection, reduced motion, 200% text, and horizontal overflow at five widths.
 
 Automated axe checks cover the homepage and appearance controls in light and dark appearances at mobile and desktop widths, plus the SuperLua article and syntax highlighting in both appearances. Automated checks do not replace a full assistive-technology audit.
 
@@ -40,7 +40,7 @@ The static build is in `dist`. Hosting and direct-route fallback on the future b
 
 ## Implementation choices
 
-Model the Domain kept appearance as two explicit preferences with one owner. Prove It Works led to repeatable browser checks and a separate production smoke check. The homepage uses the existing Navy video through a derived still poster and explicit playback. The old magnetic cursor effect and blanket reveal wrappers were removed after their callers were migrated.
+Model the Domain kept appearance as two explicit preferences with one owner. Prove It Works led to repeatable browser checks and a separate production smoke check. The homepage uses the existing Navy video through a derived still poster, muted autoplay, and a pause/resume control. The old magnetic cursor effect and blanket reveal wrappers were removed after their callers were migrated.
 
 Review accepted the storage-failure comment because browser storage availability is outside the code's control. No comment suppressions or unresolved constraint comments were added.
 

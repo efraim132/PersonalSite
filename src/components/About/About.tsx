@@ -24,26 +24,18 @@ export default function About() {
           <div>
             <div className={styles.bio}>
               <h3 className={styles.subheading}>
-                I like the point where a practical problem meets a technical
-                one.
+                I work on software and hardware.
               </h3>
               <p>
-                I move around the stack depending on what a project needs:
-                interfaces, APIs, automation, deployment work, desktop software,
-                and sometimes a small piece of hardware.
+                My projects include web interfaces, APIs, automation, and
+                desktop software. I also work on deployment and hardware when
+                needed.
               </p>
               <p>
-                My background is not the usual route into software. I spent more
-                than five years operating and maintaining power and propulsion
-                systems in the United States Navy. That taught me to value
-                readable procedures, observable systems, and recovery plans that
-                work under pressure.
+                Before software, I spent more than five years operating and
+                maintaining power and propulsion systems in the United States
+                Navy.
               </p>
-              <div className={styles.principles}>
-                <span>Keep it readable</span>
-                <span>Make the state visible</span>
-                <span>Leave useful notes</span>
-              </div>
             </div>
           </div>
         </div>
@@ -61,10 +53,9 @@ export default function About() {
               <p>
                 As a Gas Turbine Technician (Electrical) and Engineering Officer
                 of the Watch, I led maintenance, technical training, and safe
-                plant operations. I still carry the same habits into software:
-                understand the current state, write down the handoff, think
-                through failure modes, and make sure a person can safely step
-                in.
+                plant operations. I learned to write procedures that another
+                person could follow and plan for equipment failures. I use those
+                habits when documenting and operating software.
               </p>
             </div>
           </div>
