@@ -1,4 +1,3 @@
-import ScrollReveal from '../ScrollReveal/ScrollReveal'
 import styles from './Contact.module.css'
 
 const contacts = [
@@ -15,7 +14,14 @@ const contacts = [
     label: 'Email',
     url: 'mailto:efraimgrebnevp@gmail.com',
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="24" height="24">
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        width="24"
+        height="24"
+      >
         <rect x="2" y="4" width="20" height="16" rx="2" />
         <path d="M22 4L12 13 2 4" />
       </svg>
@@ -45,13 +51,13 @@ export default function Contact() {
   return (
     <section id="contact" className={styles.section}>
       <div className="container">
-        <ScrollReveal>
+        <div>
           <h2 className={styles.heading}>Contact me</h2>
-        </ScrollReveal>
+        </div>
 
         <div className={styles.grid}>
-          {contacts.map((contact, i) => (
-            <ScrollReveal key={contact.label} delay={i * 80}>
+          {contacts.map((contact) => (
+            <div key={contact.label}>
               <a
                 href={contact.url}
                 target={contact.url.startsWith('mailto') ? undefined : '_blank'}
@@ -64,7 +70,7 @@ export default function Contact() {
                   <span aria-hidden="true">↗</span>
                 </span>
               </a>
-            </ScrollReveal>
+            </div>
           ))}
         </div>
       </div>

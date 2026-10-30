@@ -6,7 +6,13 @@ interface ProjectTableProps {
   projects: Project[]
 }
 
-function ProjectDestination({ project, mobile = false }: { project: Project; mobile?: boolean }) {
+function ProjectDestination({
+  project,
+  mobile = false,
+}: {
+  project: Project
+  mobile?: boolean
+}) {
   if (project.detailRoute != null) {
     let label = 'Read ↗'
     if (mobile) {
@@ -69,7 +75,6 @@ export default function ProjectTable({ projects }: ProjectTableProps) {
         </tbody>
       </table>
 
-      {/* Mobile card layout */}
       <div className={styles.mobileCards}>
         {projects.map((project) => (
           <div key={project.id} className={styles.mobileCard}>

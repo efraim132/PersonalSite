@@ -1,0 +1,7 @@
+ts	phase	decision	why	evidence	result
+2026-10-30T23:31:50Z	frame	Keep existing routes and implement the approved blue design	The current shared components already fit the new presentation	docs/macos-design-rework-plan.md	open
+2026-10-30T23:33:09Z	architecture	Own appearance settings in Navbar and apply semantic CSS tokens at the document root	No other component needs React appearance state; context would add unused machinery	src/lib/appearance.ts	open
+2026-10-30T23:38:02Z	controls	Verified mobile disclosure and saved appearance in Chromium	Test the actual controls before extending the redesign	src/components/Navbar/Navbar.tsx	VERIFIED
+2026-10-30T23:43:44Z	verification	Fixed enlarged-text overflow, repeated anchor navigation, forced-color selection and article link distinction	Browser tests and independent review exposed these failures	tests/site.spec.ts	VERIFIED
+2026-10-30T23:43:44Z	verification	Ran 54 Chromium and Firefox checks including accessibility scans	Supersedes the earlier source-only evidence for control verification	artifacts/browser-tests.txt	VERIFIED
+2026-10-30T23:43:44Z	verification	Checked the built production routes and inspected final screenshots	Verify the generated site as well as the development server	artifacts/production-smoke.txt	VERIFIED

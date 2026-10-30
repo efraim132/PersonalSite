@@ -11,10 +11,12 @@ import PrivateEventMediaPage from './pages/PrivateEventMediaPage'
 import NotFoundPage from './pages/NotFoundPage'
 
 function ScrollToTop() {
-  const { pathname } = useLocation()
+  const { pathname, hash, key } = useLocation()
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [pathname])
+    if (hash) return
+    window.scrollTo({ top: 0, behavior: 'instant' })
+    document.getElementById('main-content')?.focus({ preventScroll: true })
+  }, [pathname, hash, key])
   return null
 }
 
@@ -22,15 +24,24 @@ function App() {
   return (
     <>
       <ScrollToTop />
+      <a className="skip-link pill" href="#main-content">
+        Skip to content
+      </a>
       <Navbar />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/projects/superlua" element={<SuperLuaPage />} />
           <Route path="/projects/eenet" element={<EENetPage />} />
           <Route path="/writing/grebkey" element={<GrebKeyPage />} />
-          <Route path="/writing/realtime-operations" element={<RealtimeOperationsPage />} />
-          <Route path="/writing/private-event-media" element={<PrivateEventMediaPage />} />
+          <Route
+            path="/writing/realtime-operations"
+            element={<RealtimeOperationsPage />}
+          />
+          <Route
+            path="/writing/private-event-media"
+            element={<PrivateEventMediaPage />}
+          />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>

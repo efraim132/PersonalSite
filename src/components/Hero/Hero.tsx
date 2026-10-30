@@ -1,47 +1,119 @@
+import { useRef, useState } from 'react'
+import profilePic from '../../assets/profilepic.jpg'
 import styles from './Hero.module.css'
-import Magnet from '../ReactBits/Magnet'
 
 export default function Hero() {
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const [playing, setPlaying] = useState(false)
+  const [failed, setFailed] = useState(false)
+
+  async function toggleVideo() {
+    const video = videoRef.current
+    if (!video) return
+    if (!video.paused) video.pause()
+    else {
+      try {
+        await video.play()
+      } catch {
+        setFailed(true)
+      }
+    }
+  }
+
   return (
-    <section className={styles.hero}>
-      <video
-        className={styles.video}
-        autoPlay
-        muted
-        loop
-        playsInline
-        aria-hidden="true"
-      >
-        <source src="/navy-bg.mp4" type="video/mp4" />
-      </video>
-      <div className={styles.overlay} />
-      <div className={`container ${styles.content}`}>
-        <div className={styles.status}>
-          <span aria-hidden="true" />
-          Software, hardware, and notes
-        </div>
-        <h1 className={styles.name}>
-          I make things and <em>write down what I learn.</em>
-        </h1>
-        <p className={styles.subtitle}>
-          This is where I keep software projects, hardware experiments, and
-          stories from figuring them out.
-        </p>
-        <div className={styles.actions}>
-          <Magnet>
-            <a href="#projects" className={styles.primaryAction}>
-              Browse projects <span aria-hidden="true">↘</span>
+    <section id="home" className={styles.hero}>
+      <div className={`container ${styles.layout}`}>
+        <div className={styles.copy}>
+          <div className={styles.identity}>
+            <img src={profilePic} alt="" width="44" height="44" />
+            <span>
+              Efraim Grebnev<span>Software, hardware, and a curious mind.</span>
+            </span>
+          </div>
+          <h1>
+            I make things.
+            <br />
+            And share what
+            <br className={styles.desktopBreak} /> I learn.
+          </h1>
+          <p className={styles.subtitle}>
+            Software projects, hardware experiments, and notes from figuring
+            them out. A collection that keeps growing.
+          </p>
+          <div className={styles.actions}>
+            <a href="#projects" className="pill">
+              Browse projects <span aria-hidden="true">↓</span>
             </a>
-          </Magnet>
-          <a href="#writing" className={styles.secondaryAction}>
-            Read the stories
-          </a>
+            <a href="#writing" className="pill pill-secondary">
+              Read the stories
+            </a>
+          </div>
         </div>
-        <div className={styles.capabilities} aria-label="What you will find here">
-          <span>01 · Software projects</span>
-          <span>02 · Hardware experiments</span>
-          <span>03 · Build notes</span>
-        </div>
+        <figure className={styles.media}>
+          <div className={styles.videoFrame}>
+            <video
+              ref={videoRef}
+              poster="/navy-poster.jpg"
+              preload="none"
+              muted
+              loop
+              playsInline
+              aria-label="Scenes from my time in the Navy"
+              onPlay={() => setPlaying(true)}
+              onPause={() => setPlaying(false)}
+              onError={() => setFailed(true)}
+            >
+              <source src="/navy-bg.mp4" type="video/mp4" />
+            </video>
+            <div className={styles.videoShade} />
+            <div className={styles.videoCaption}>
+              <span>Before software</span>
+              <strong>
+                A different kind
+                <br />
+                of systems work.
+              </strong>
+            </div>
+            {!failed && (
+              <button
+                className={styles.play}
+                onClick={toggleVideo}
+                aria-label={playing ? 'Pause Navy video' : 'Play Navy video'}
+              >
+                {playing ? (
+                  <span aria-hidden="true">Ⅱ</span>
+                ) : (
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path d="m8 5 11 7-11 7Z" />
+                  </svg>
+                )}
+              </button>
+            )}
+          </div>
+          <figcaption>
+            <span>From the Navy to building software.</span>
+            <a href="#about">
+              My story <span aria-hidden="true">↗</span>
+            </a>
+          </figcaption>
+          {failed && (
+            <p className={styles.mediaError} role="status">
+              The video is unavailable. You can still read my story below.
+            </p>
+          )}
+        </figure>
+      </div>
+      <div className={`container ${styles.bottom}`}>
+        <span>Made to be explored.</span>
+        <a href="#projects" aria-label="Explore selected work">
+          ↓
+        </a>
       </div>
     </section>
   )

@@ -13,10 +13,9 @@
 .text,
 .note {
   color: var(--color-text-muted);
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
   letter-spacing: 0.04em;
-  text-transform: uppercase;
 }
 
 @media (max-width: 620px) {

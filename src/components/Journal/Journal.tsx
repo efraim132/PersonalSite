@@ -1,5 +1,4 @@
 import { Link } from 'react-router'
-import ScrollReveal from '../ScrollReveal/ScrollReveal'
 import { journalEntries } from '../../data/journal'
 import styles from './Journal.module.css'
 
@@ -7,7 +6,7 @@ export default function Journal() {
   return (
     <section id="writing" className={styles.section}>
       <div className="container">
-        <ScrollReveal>
+        <div>
           <div className={styles.headingRow}>
             <div>
               <p className="eyebrow">Stories</p>
@@ -18,13 +17,12 @@ export default function Journal() {
               I would remember for the next project.
             </p>
           </div>
-        </ScrollReveal>
+        </div>
 
         <div className={styles.list}>
-          {journalEntries.map((entry, index) => (
-            <ScrollReveal key={entry.slug} delay={index * 80}>
+          {journalEntries.map((entry) => (
+            <div key={entry.slug}>
               <Link to={entry.slug} className={styles.entry}>
-                <span className={styles.number}>0{index + 1}</span>
                 <span className={styles.copy}>
                   <span className={styles.meta}>
                     {entry.type} · {entry.window}
@@ -41,7 +39,7 @@ export default function Journal() {
                   ↗
                 </span>
               </Link>
-            </ScrollReveal>
+            </div>
           ))}
         </div>
       </div>

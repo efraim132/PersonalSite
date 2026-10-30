@@ -1,15 +1,16 @@
 import { Link } from 'react-router'
 import type { Project } from '../../data/projects'
-import SpotlightCard from '../ReactBits/SpotlightCard'
 import styles from './FeaturedProjectCard.module.css'
 
 interface FeaturedProjectCardProps {
   project: Project
 }
 
-export default function FeaturedProjectCard({ project }: FeaturedProjectCardProps) {
+export default function FeaturedProjectCard({
+  project,
+}: FeaturedProjectCardProps) {
   return (
-    <SpotlightCard className={styles.card}>
+    <article className={styles.card}>
       <div className={styles.content}>
         <div className={styles.header}>
           <span className={styles.platform}>{project.platform}</span>
@@ -19,7 +20,9 @@ export default function FeaturedProjectCard({ project }: FeaturedProjectCardProp
         {project.tags != null && (
           <div className={styles.tags}>
             {project.tags.map((tag) => (
-              <span key={tag} className={styles.tag}>{tag}</span>
+              <span key={tag} className={styles.tag}>
+                {tag}
+              </span>
             ))}
           </div>
         )}
@@ -28,20 +31,27 @@ export default function FeaturedProjectCard({ project }: FeaturedProjectCardProp
         )}
         <div className={styles.actions}>
           {project.detailRoute != null && (
-            <Link to={project.detailRoute} className={styles.readMore}>
+            <Link to={project.detailRoute} className="pill">
               Read the story <span aria-hidden="true">↗</span>
             </Link>
           )}
           {project.url != null && (
-            <a href={project.url} target="_blank" rel="noopener noreferrer" className={styles.viewProject}>
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="pill pill-secondary"
+            >
               View project
             </a>
           )}
           {project.privateCaseStudy === true && (
-            <span className={styles.private}>Details intentionally limited</span>
+            <span className={styles.private}>
+              Details intentionally limited
+            </span>
           )}
         </div>
       </div>
-    </SpotlightCard>
+    </article>
   )
 }
