@@ -1,5 +1,4 @@
 import { useRef, useState } from 'react'
-import profilePic from '../../assets/profilepic.jpg'
 import styles from './Hero.module.css'
 
 export default function Hero() {
@@ -24,17 +23,12 @@ export default function Hero() {
     <section id="home" className={styles.hero}>
       <div className={`container ${styles.layout}`}>
         <div className={styles.copy}>
-          <div className={styles.identity}>
-            <img src={profilePic} alt="" width="44" height="44" />
-            <span>
-              Efraim Grebnev<span>Software developer and Navy veteran.</span>
-            </span>
-          </div>
           <h1>
             My projects
             <br />
             and build notes.
           </h1>
+          <p className={styles.role}>Software developer and Navy veteran.</p>
           <p className={styles.subtitle}>
             I write about the software and hardware I build, what broke, and how
             I fixed it.

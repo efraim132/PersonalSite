@@ -29,18 +29,16 @@
   letter-spacing: -0.025em;
   white-space: nowrap;
 }
-.monogram {
-  display: grid;
-  place-items: center;
+.avatar {
+  display: block;
   width: 40px;
   height: 40px;
+  flex-shrink: 0;
   border-radius: 50%;
-  color: var(--action-text);
-  background: var(--action-fill);
-  font-size: 1.15rem;
-  letter-spacing: -0.07em;
-  font-weight: 600;
+  object-fit: cover;
+  object-position: center 25%;
 }
+
 .desktopLinks {
   display: flex;
   gap: 3px;
@@ -200,7 +198,7 @@
   .brand {
     font-size: 0.85rem;
   }
-  .monogram {
+  .avatar {
     width: 36px;
     height: 36px;
   }
