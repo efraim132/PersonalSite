@@ -1,10 +1,18 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import styles from './Hero.module.css'
 
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null)
   const [playing, setPlaying] = useState(false)
   const [failed, setFailed] = useState(false)
+
+  const [scrolled, setScrolled] = useState(() => window.scrollY > 0)
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 0)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   async function toggleVideo() {
     const video = videoRef.current
@@ -103,8 +111,11 @@ export default function Hero() {
           )}
         </figure>
       </div>
-      <div className={`container ${styles.bottom}`}>
-        <span>Projects and writing</span>
+      <div
+        className={`container ${styles.bottom}`}
+        data-scrolled={scrolled}
+        inert={scrolled}
+      >
         <a href="#projects" aria-label="Explore selected work">
           ↓
         </a>

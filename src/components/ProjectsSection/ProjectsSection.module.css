@@ -1,5 +1,6 @@
 .section {
   padding: var(--section-padding);
+  padding-top: clamp(2rem, 4vw, 3.5rem);
 }
 .heading {
   font-size: clamp(2rem, 4.2vw, 3.6rem);

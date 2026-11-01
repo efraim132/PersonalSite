@@ -122,11 +122,16 @@
 .bottom {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-top: 58px;
-  padding-bottom: 24px;
+  justify-content: flex-end;
+  margin-top: 8px;
+  opacity: 1;
+  transition: opacity 200ms ease;
   color: var(--color-text-muted);
   font-size: 0.8rem;
+}
+.bottom[data-scrolled="true"] {
+  opacity: 0;
+  pointer-events: none;
 }
 .bottom a {
   display: grid;
@@ -189,9 +194,6 @@
   }
   .videoCaption strong {
     font-size: 2rem;
-  }
-  .bottom {
-    margin-top: 24px;
   }
   .media figcaption {
     font-size: 0.75rem;
