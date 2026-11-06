@@ -44,7 +44,7 @@ function ProjectDestination({
     )
   }
 
-  return <span className={styles.private}>Private project</span>
+  return <span className={styles.private}>{project.privateCaseStudy ? 'Private project' : 'No public link'}</span>
 }
 
 export default function ProjectTable({ projects }: ProjectTableProps) {

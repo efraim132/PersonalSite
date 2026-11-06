@@ -8,6 +8,7 @@ import EENetPage from './pages/EENetPage'
 import GrebKeyPage from './pages/GrebKeyPage'
 import RealtimeOperationsPage from './pages/RealtimeOperationsPage'
 import PrivateEventMediaPage from './pages/PrivateEventMediaPage'
+import AutonomousPlanePage from './pages/AutonomousPlanePage'
 import NotFoundPage from './pages/NotFoundPage'
 
 function ScrollToTop() {
@@ -42,6 +43,7 @@ function App() {
             path="/writing/private-event-media"
             element={<PrivateEventMediaPage />}
           />
+          <Route path="/writing/autonomous-plane" element={<AutonomousPlanePage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>

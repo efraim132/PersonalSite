@@ -1,0 +1,58 @@
+.figure {
+  margin: 2rem 0;
+  min-width: 0;
+}
+
+.figure a {
+  display: block;
+  border-radius: var(--radius-control);
+  overflow: hidden;
+  background: var(--color-bg-secondary);
+}
+
+.figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.figure figcaption {
+  margin-top: 0.75rem;
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.hero {
+  margin-top: 0;
+  margin-bottom: 2.5rem;
+}
+
+.hero img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center 43%;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin: 2rem 0;
+}
+
+.gallery .figure {
+  margin: 0;
+}
+
+.controller {
+  max-width: 480px;
+  margin-inline: auto;
+}
+
+@media (max-width: 540px) {
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}

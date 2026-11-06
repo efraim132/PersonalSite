@@ -7,6 +7,7 @@ const routes = [
   '/writing/grebkey',
   '/writing/realtime-operations',
   '/writing/private-event-media',
+  '/writing/autonomous-plane',
 ]
 
 for (const route of routes) {
@@ -129,6 +130,7 @@ for (const width of [360, 390, 768, 1280, 1440]) {
       '/',
       '/projects/eenet',
       '/writing/private-event-media',
+      '/writing/autonomous-plane',
     ]) {
       await page.goto(route)
       expect(

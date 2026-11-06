@@ -19,7 +19,6 @@ export const projects: Project[] = [
     platform: 'Project notes',
     date: '2026',
     sortDate: '2026-07-30',
-    url: 'https://grebkey.efraim.us',
     description:
       'How I kept cached validations current, reconciled billing with Stripe, and made the generated API docs describe authentication correctly.',
     featured: true,
@@ -77,15 +76,6 @@ export const projects: Project[] = [
     tags: ['Python', 'Lua', 'Compiler Design'],
   },
   {
-    id: 'react-todo-app',
-    name: 'React Todo Web App',
-    platform: 'Open Source Web',
-    date: '08/10/2025',
-    sortDate: '2025-08-10',
-    url: 'https://reacttodo.efraim.us/',
-    tags: ['React', 'TypeScript'],
-  },
-  {
     id: 'react-todo-repo',
     name: 'React Todo Repo',
     platform: 'Open Source Web',
@@ -127,7 +117,6 @@ export const projects: Project[] = [
     platform: 'Web',
     date: '11/11/2024',
     sortDate: '2024-11-11',
-    url: 'https://todo.efraim.us',
     tags: ['TypeScript', 'Web'],
   },
   {
@@ -136,7 +125,6 @@ export const projects: Project[] = [
     platform: 'Web',
     date: '10/15/2024',
     sortDate: '2024-10-15',
-    url: 'https://blog.efraim.us',
     tags: ['Web'],
   },
   {

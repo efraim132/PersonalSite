@@ -56,4 +56,13 @@ export const journalEntries: JournalEntry[] = [
     type: 'Project story',
     tags: ['Python', 'Lua', 'Compilers'],
   },
+  {
+    slug: '/writing/autonomous-plane',
+    title: 'Our first autonomous plane',
+    summary:
+      'The foam plane Elliot and I built, its 97-minute GPS-guided flight, and the custom flight controller still in progress.',
+    window: 'Spring 2025',
+    type: 'Project story',
+    tags: ['Aircraft', '3D printing', 'Electronics'],
+  },
 ]

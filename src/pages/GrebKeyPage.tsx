@@ -88,9 +88,9 @@ export default function GrebKeyPage() {
       date="Spring–Summer 2026"
       readingTime="15 min read"
       tags={['Cloudflare', 'TypeScript', 'Python', 'Developer experience']}
-      projectUrl="https://grebkey.efraim.us"
       intro="GrebKey started with one job: tell an application whether a license key is valid. The project became interesting when the API, cache, dashboard, billing system, documentation, and SDKs all had to give the same answer."
     >
+      <p>The hosted GrebKey service is no longer available. These notes describe how I built it.</p>
       <h2>The first decision was to treat validation as a state machine</h2>
       <p>
         My first mental model was an endpoint that looked up a string and returned
