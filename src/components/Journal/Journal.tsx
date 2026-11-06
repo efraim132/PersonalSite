@@ -19,12 +19,16 @@ export default function Journal() {
         </div>
 
         <div className={styles.list}>
-          {journalEntries.map((entry) => (
+          {journalEntries.map((entry, index) => (
             <div key={entry.slug}>
-              <Link to={entry.slug} className={styles.entry}>
+              <Link to={entry.slug} className={`${styles.entry} ${index === 0 ? styles.latest : ''}`}>
                 <span className={styles.copy}>
+                  {index === 0 && <span className={styles.badge}>Latest article</span>}
+                  {entry.published != null && (
+                    <span className={styles.meta}>Published {entry.published}</span>
+                  )}
                   <span className={styles.meta}>
-                    {entry.type} · {entry.window}
+                    {entry.type} · Project: {entry.window}
                   </span>
                   <span className={styles.title}>{entry.title}</span>
                   <span className={styles.summary}>{entry.summary}</span>

@@ -5,7 +5,7 @@ export default function AutonomousPlanePage() {
   return (
     <BlogLayout
       title="Our first autonomous plane"
-      date="Spring 2025"
+      date="Published November 6, 2026 · Project: spring 2025"
       tags={['Aircraft', '3D printing', 'Electronics']}
       intro="A look back at the foam plane Elliot and I built, its 97-minute autonomous flight, and the flight controller we're still working on."
       readingTime="2 min read"

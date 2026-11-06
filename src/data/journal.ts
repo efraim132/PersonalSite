@@ -3,12 +3,23 @@ export interface JournalEntry {
   title: string
   summary: string
   window: string
+  published?: string
   type: string
   tags: string[]
   privateCaseStudy?: boolean
 }
 
 export const journalEntries: JournalEntry[] = [
+  {
+    slug: '/writing/autonomous-plane',
+    title: 'Our first autonomous plane',
+    summary:
+      'The foam plane Elliot and I built, its 97-minute GPS-guided flight, and the custom flight controller still in progress.',
+    window: 'Spring 2025',
+    published: 'November 6, 2026',
+    type: 'Project story',
+    tags: ['Aircraft', '3D printing', 'Electronics'],
+  },
   {
     slug: '/writing/grebkey',
     title: 'How GrebKey grew beyond license checks',
@@ -55,14 +66,5 @@ export const journalEntries: JournalEntry[] = [
     window: 'September 2025',
     type: 'Project story',
     tags: ['Python', 'Lua', 'Compilers'],
-  },
-  {
-    slug: '/writing/autonomous-plane',
-    title: 'Our first autonomous plane',
-    summary:
-      'The foam plane Elliot and I built, its 97-minute GPS-guided flight, and the custom flight controller still in progress.',
-    window: 'Spring 2025',
-    type: 'Project story',
-    tags: ['Aircraft', '3D printing', 'Electronics'],
   },
 ]

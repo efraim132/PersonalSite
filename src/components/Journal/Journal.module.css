@@ -84,3 +84,18 @@
     gap: 1rem;
   }
 }
+
+.latest {
+  padding-inline: clamp(1rem, 3vw, 2rem);
+  background: var(--color-bg-card);
+  border-left: 3px solid var(--color-signal);
+}
+.badge {
+  align-self: flex-start;
+  padding: 0.3rem 0.65rem;
+  border-radius: 7px;
+  color: var(--action-text);
+  background: var(--action-fill);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
