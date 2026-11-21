@@ -17,7 +17,3 @@
   .specimen { grid-template-columns: 5rem 1fr; align-items: center; border-radius: 1.5rem; gap: 1rem; }
   .specimen img { width: 100%; margin: 0; }
 }
-
-.navy { margin-top: 2rem; }
-.navy summary { cursor: pointer; width: fit-content; font-size: .85rem; }
-.navy video { display: block; width: min(100%, 48rem); margin-top: 1rem; border-radius: 1.5rem; }

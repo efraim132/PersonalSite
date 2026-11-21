@@ -19,12 +19,6 @@ export default function Hero() {
           <span>Designing my monogram <b aria-hidden="true">↗</b></span>
         </Link>
       </div>
-      <details className={`container ${styles.navy}`}>
-        <summary>Scenes from my time in the Navy</summary>
-        <video controls preload="none" poster="/navy-poster.jpg" playsInline muted aria-label="Scenes from my time in the Navy">
-          <source src="/navy-bg.mp4" type="video/mp4" />
-        </video>
-      </details>
     </section>
   )
 }
