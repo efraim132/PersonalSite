@@ -7,13 +7,13 @@
 
 My personal site collects the software and hardware I build, what broke along the way, and how I fixed it.
 
-[Visit the site](https://efraim.us) · [Browse projects](https://efraim.us/#projects) · [Read the stories](https://efraim.us/#writing)
+[Visit the site](https://efraim.grebnev.org) · [Browse projects](https://efraim.grebnev.org/#projects) · [Read the stories](https://efraim.grebnev.org/#writing)
 
 ## The monogram
 
 The original Busbar EG used three electrical rails to draw the E. The current mark folds both initials into one upright G. The design article shows both marks and the sketches between them.
 
-[Read the design story](https://efraim.us/writing/designing-busbar-eg) · [Brand guidelines and downloads](https://efraim.us/brand)
+[Read the design story](https://efraim.grebnev.org/writing/designing-busbar-eg) · [Brand guidelines and downloads](https://efraim.grebnev.org/brand)
 
 ## Local development
 
