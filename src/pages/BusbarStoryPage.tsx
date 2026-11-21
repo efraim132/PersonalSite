@@ -4,7 +4,7 @@ import BlogLayout from '../components/BlogLayout/BlogLayout'
 export default function BusbarStoryPage() {
   return (
     <BlogLayout title="How I designed Busbar EG" date="November 21, 2026" tags={['Design', 'Identity']} readingTime="3 min read"
-      intro="I wanted one mark I could put in the corner of my website, at the top of my résumé, or on a PCB silkscreen. Three thick bars got me most of the way there. The G took a few tries.">
+      intro="I wanted one mark I could put in the corner of my website, at the top of my resume, or on a PCB silkscreen. Three thick bars got me most of the way there. The G took a few tries.">
       <h2>Why three rails?</h2>
       <p>I liked the rounded corners and single-color shape of Docker’s container logo. For my own mark, I wanted a detail that came from my time working with electrical systems. A busbar gave me a place to start. Stack three rails, shorten the middle one, and I could read an E even with the spine missing.</p>
       <h2>I lost the G trying to hide it</h2>
@@ -20,7 +20,7 @@ export default function BusbarStoryPage() {
       <h2>Two themes from the site</h2>
       <p>Signal Orange and Ultramarine were my favorite early colors. When I put them against my site’s midnight background, I picked Ultramarine. For the dark theme, Blue Shift, I kept the signature cool white and used the blue for the accent. For Ice Blue, I moved midnight into the lettering and put it on a pale blue field.</p>
       <figure><img loading="lazy" src="/brand/studies/light-palettes.png" alt="Ice Blue, Porcelain, and Signal Mist compared beneath the dark signature" /><figcaption>Ice Blue, on the left, brought the midnight and ultramarine from the dark theme into the light one.</figcaption></figure>
-      <p>The full signature now sits in my site header. My résumé already has my name in text, so the EG alone fits beside it. Both versions are in my <Link to="/brand">brand guidelines</Link>.</p>
+      <p>The full signature now sits in my site header. My resume already has my name in text, so the EG alone fits beside it. Both versions are in my <Link to="/brand">brand guidelines</Link>.</p>
     </BlogLayout>
   )
 }
