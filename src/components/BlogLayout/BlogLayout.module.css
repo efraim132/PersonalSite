@@ -198,3 +198,7 @@
   text-decoration: underline;
   text-underline-offset: 0.2em;
 }
+
+.content figure { margin: 1.75rem 0; }
+.content figure img { width: 100%; border-radius: var(--radius-control); }
+.content figcaption { color: var(--color-text-secondary); font-size: .86rem; margin-top: .5rem; }

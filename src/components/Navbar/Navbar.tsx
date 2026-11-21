@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react'
 import { Link, useLocation } from 'react-router'
 import { readPreferences, savePreferences } from '../../lib/appearance'
 import type { Appearance } from '../../lib/appearance'
-import profilePic from '../../assets/profilepic.jpg'
 import styles from './Navbar.module.css'
 
 const navLinks = [
@@ -108,14 +107,7 @@ export default function Navbar() {
     >
       <div className={`${styles.bar} glass`}>
         <Link to="/" className={styles.brand} onClick={() => setPanel(null)}>
-          <img
-            className={styles.avatar}
-            src={profilePic}
-            alt=""
-            width="40"
-            height="40"
-          />
-          <span>Efraim Grebnev</span>
+          <span className={styles.signature} role="img" aria-label="Efraim Grebnev" />
         </Link>
         <div className={styles.desktopLinks}>{links}</div>
         <div className={styles.tools}>

@@ -2,6 +2,19 @@ import { Link } from 'react-router'
 import { journalEntries } from '../../data/journal'
 import styles from './Journal.module.css'
 
+const stories = [
+  {
+    slug: '/writing/designing-busbar-eg',
+    title: 'How I designed Busbar EG',
+    summary: 'How I turned three electrical rails into my initials and built a wordmark for my site and résumé.',
+    window: 'November 2026',
+    published: 'November 21, 2026',
+    type: 'Design notes',
+    tags: ['Design', 'Identity'],
+  },
+  ...journalEntries,
+]
+
 export default function Journal() {
   return (
     <section id="writing" className={styles.section}>
@@ -19,7 +32,7 @@ export default function Journal() {
         </div>
 
         <div className={styles.list}>
-          {journalEntries.map((entry, index) => (
+          {stories.map((entry, index) => (
             <div key={entry.slug}>
               <Link to={entry.slug} className={`${styles.entry} ${index === 0 ? styles.latest : ''}`}>
                 <span className={styles.copy}>

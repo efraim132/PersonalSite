@@ -250,3 +250,11 @@
   overflow-y: auto;
   scrollbar-width: thin;
 }
+
+.signature {
+  display: block;
+  width: clamp(150px, 19vw, 212px);
+  aspect-ratio: 714 / 51;
+  background: currentColor;
+  mask: url("/brand/signature.svg") center / contain no-repeat;
+}

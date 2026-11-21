@@ -1,3 +1,4 @@
+import { Link } from 'react-router'
 import styles from './Footer.module.css'
 
 export default function Footer() {
@@ -8,7 +9,7 @@ export default function Footer() {
           <p className={styles.text}>
             &copy; {new Date().getFullYear()} Efraim Grebnev
           </p>
-          <p className={styles.note}>Software projects and build notes.</p>
+          <Link to="/brand" className={styles.note}>Brand guidelines</Link>
         </div>
       </div>
     </footer>

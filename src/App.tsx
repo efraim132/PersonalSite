@@ -9,6 +9,8 @@ import GrebKeyPage from './pages/GrebKeyPage'
 import RealtimeOperationsPage from './pages/RealtimeOperationsPage'
 import PrivateEventMediaPage from './pages/PrivateEventMediaPage'
 import AutonomousPlanePage from './pages/AutonomousPlanePage'
+import BrandPage from './pages/BrandPage'
+import BusbarStoryPage from './pages/BusbarStoryPage'
 import NotFoundPage from './pages/NotFoundPage'
 
 function ScrollToTop() {
@@ -44,6 +46,8 @@ function App() {
             element={<PrivateEventMediaPage />}
           />
           <Route path="/writing/autonomous-plane" element={<AutonomousPlanePage />} />
+          <Route path="/brand" element={<BrandPage />} />
+          <Route path="/writing/designing-busbar-eg" element={<BusbarStoryPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
