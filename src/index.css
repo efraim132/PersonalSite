@@ -1,25 +1,25 @@
 :root {
   color-scheme: light;
-  --color-bg-primary: #f1f6fc;
-  --color-bg-secondary: #e5eef9;
+  --color-bg-primary: #eef2ff;
+  --color-bg-secondary: #e3e8fa;
   --color-bg-card: #ffffff;
   --color-bg-card-hover: #eaf2fd;
-  --color-text-primary: #142b49;
+  --color-text-primary: #161628;
   --color-text-secondary: #465d77;
   --color-text-muted: #526982;
-  --color-signal: #075bc7;
+  --color-signal: #243cf0;
   --color-signal-strong: #08499d;
-  --color-accent: #075bc7;
-  --color-accent-light: #075bc7;
+  --color-accent: #243cf0;
+  --color-accent-light: #243cf0;
   --color-border: #ccd9e9;
   --color-border-strong: #9fb9d9;
-  --glass-fill: rgba(235, 244, 255, 0.9);
+  --glass-fill: rgba(238, 242, 255, 0.94);
   --glass-edge: rgba(255, 255, 255, 0.9);
   --glass-shadow:
     0 8px 32px rgba(29, 71, 122, 0.12), inset 0 1px 0 var(--glass-edge);
-  --action-fill: #075bc7;
+  --action-fill: #243cf0;
   --action-text: #ffffff;
-  --hero-top: #e5effe;
+  --hero-top: #eef2ff;
   --code-keyword: #763ca8;
   --code-string: #236344;
   --code-number: #8a4808;
@@ -37,26 +37,26 @@
 }
 :root[data-appearance='dark'] {
   color-scheme: dark;
-  --color-bg-primary: #101e31;
-  --color-bg-secondary: #14273e;
-  --color-bg-card: #1c304a;
+  --color-bg-primary: #10101c;
+  --color-bg-secondary: #161628;
+  --color-bg-card: #202035;
   --color-bg-card-hover: #243d5b;
   --color-text-primary: #eff6ff;
   --color-text-secondary: #bccfe5;
   --color-text-muted: #a9bfd9;
-  --color-signal: #9ac8ff;
+  --color-signal: #acbaff;
   --color-signal-strong: #c6dfff;
-  --color-accent: #9ac8ff;
-  --color-accent-light: #9ac8ff;
+  --color-accent: #acbaff;
+  --color-accent-light: #acbaff;
   --color-border: #38516f;
   --color-border-strong: #58799d;
-  --glass-fill: rgba(24, 46, 73, 0.94);
+  --glass-fill: rgba(22, 22, 40, 0.94);
   --glass-edge: rgba(167, 205, 255, 0.2);
   --glass-shadow:
     0 8px 32px rgba(0, 8, 25, 0.3), inset 0 1px 0 var(--glass-edge);
   --action-fill: #a0ccff;
   --action-text: #102a4a;
-  --hero-top: #193b64;
+  --hero-top: #161628;
   --code-keyword: #d6b7f5;
   --code-string: #a8dbb7;
   --code-number: #f2cc99;
@@ -64,26 +64,26 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-appearance='light']):not([data-appearance='dark']) {
     color-scheme: dark;
-    --color-bg-primary: #101e31;
-    --color-bg-secondary: #14273e;
-    --color-bg-card: #1c304a;
+    --color-bg-primary: #10101c;
+    --color-bg-secondary: #161628;
+    --color-bg-card: #202035;
     --color-bg-card-hover: #243d5b;
     --color-text-primary: #eff6ff;
     --color-text-secondary: #bccfe5;
     --color-text-muted: #a9bfd9;
-    --color-signal: #9ac8ff;
+    --color-signal: #acbaff;
     --color-signal-strong: #c6dfff;
-    --color-accent: #9ac8ff;
-    --color-accent-light: #9ac8ff;
+    --color-accent: #acbaff;
+    --color-accent-light: #acbaff;
     --color-border: #38516f;
     --color-border-strong: #58799d;
-    --glass-fill: rgba(24, 46, 73, 0.94);
+    --glass-fill: rgba(22, 22, 40, 0.94);
     --glass-edge: rgba(167, 205, 255, 0.2);
     --glass-shadow:
       0 8px 32px rgba(0, 8, 25, 0.3), inset 0 1px 0 var(--glass-edge);
     --action-fill: #a0ccff;
     --action-text: #102a4a;
-    --hero-top: #193b64;
+    --hero-top: #161628;
     --code-keyword: #d6b7f5;
     --code-string: #a8dbb7;
     --code-number: #f2cc99;

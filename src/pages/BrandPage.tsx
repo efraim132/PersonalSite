@@ -2,7 +2,7 @@ import { useState } from 'react'
 import styles from './BrandPage.module.css'
 
 const assets = [
-  { file: 'busbar', label: 'Monogram' },
+  { file: 'monogram', label: 'Monogram' },
   { file: 'wordmark', label: 'Wordmark' },
   { file: 'signature', label: 'Signature' },
 ]
@@ -10,22 +10,22 @@ const assets = [
 export default function BrandPage({ initialTheme = 'light' }: { initialTheme?: 'light' | 'dark' }) {
   const [theme, setTheme] = useState(initialTheme)
   const light = theme === 'light'
-  const assetFolder = light ? '/brand/ice-blue' : '/brand'
+  const assetFolder = light ? '/brand/g/ice' : '/brand/g/midnight'
   const themeName = light ? 'Ice Blue' : 'Blue Shift'
   return (
     <article className={styles.page} data-theme={theme}>
       <div className={styles.sheet}>
         <header className={styles.header}>
           <h1>Brand guidelines</h1>
-          <a href="/brand/busbar-kit.zip" download>Download kit ↓</a>
+          <a href="/brand/g/identity-kit.zip" download>Download kit ↓</a>
         </header>
         <div className={styles.switcher} role="group" aria-label="Brand theme">
           <button type="button" data-choice="light" aria-pressed={light} onClick={() => setTheme('light')}>Ice Blue · Light</button>
           <button type="button" data-choice="dark" aria-pressed={!light} onClick={() => setTheme('dark')}>Blue Shift · Dark</button>
         </div>
         <figure className={styles.hero}>
-          <img src={`${assetFolder}/busbar.svg`} alt="Busbar EG monogram with a forward lean and level rails" />
-          <figcaption>Busbar EG <span>/</span> {themeName}</figcaption>
+          <img src={`${assetFolder}/monogram.svg`} alt="Upright G with a rounded shoulder and an open horizontal crossbar" />
+          <figcaption>Grebnev monogram <span>/</span> {themeName}</figcaption>
         </figure>
         <section className={styles.section}>
           <h2>Logo suite</h2>
@@ -57,7 +57,7 @@ export default function BrandPage({ initialTheme = 'light' }: { initialTheme?: '
         </section>
         <section className={styles.section}>
           <h2>Color &amp; spacing</h2>
-          <p>Use one ink per mark. Leave at least one rail’s thickness clear on every side. At small sizes, keep the monogram at least 24 pixels tall so its gaps stay visible.</p>
+          <p>Use one ink per mark. Leave at least one crossbar’s thickness clear on every side. Keep the mark upright and preserve its wider-than-tall proportions. At icon sizes, use the G alone.</p>
           <div className={styles.swatches}>
             <div>{light ? 'Ice Blue' : 'Midnight'} <small>{light ? '#EEF2FF' : '#161628'}</small></div>
             <div>{light ? 'Midnight' : 'Cool white'} <small>{light ? '#161628' : '#E8E8F0'}</small></div>

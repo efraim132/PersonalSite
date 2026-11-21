@@ -254,7 +254,7 @@
 .signature {
   display: block;
   width: clamp(150px, 19vw, 212px);
-  aspect-ratio: 714 / 51;
+  aspect-ratio: 678 / 56;
   background: currentColor;
-  mask: url("/brand/signature.svg") center / contain no-repeat;
+  mask: url("/brand/g/midnight/signature.svg") center / contain no-repeat;
 }

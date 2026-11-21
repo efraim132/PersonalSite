@@ -5,8 +5,8 @@ import styles from './Journal.module.css'
 const stories = [
   {
     slug: '/writing/designing-busbar-eg',
-    title: 'How I designed Busbar EG',
-    summary: 'How I turned three electrical rails into my initials and built a wordmark for my site and résumé.',
+    title: 'From three rails to one G',
+    summary: 'The sketches that took my monogram from three electrical rails to a single rounded G.',
     window: 'November 2026',
     published: 'November 21, 2026',
     type: 'Design notes',
