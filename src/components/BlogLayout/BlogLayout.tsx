@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { Link } from 'react-router'
 import styles from './BlogLayout.module.css'
 
@@ -23,15 +22,6 @@ export default function BlogLayout({
   readingTime,
   children,
 }: BlogLayoutProps) {
-  useEffect(() => {
-    const previousTitle = document.title
-    document.title = `${title} | Efraim Grebnev`
-
-    return () => {
-      document.title = previousTitle
-    }
-  }, [title])
-
   return (
     <article className={styles.article}>
       <div className={styles.container}>
